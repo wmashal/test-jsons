@@ -1,6 +1,6 @@
 {
   "staging": {
-    "Jul-23": [
+    "7-23": [
       {
         "name": "cc-limit-user-bindings",
         "namespace": "feature-toggle",
@@ -51,9 +51,8 @@
           "name": "default"
         }
       },
-
     ],
-    "Aug-23": [
+    "8-23": [
       {
         "name": "rmpatchrevisionid",
         "namespace": "feature-toggle",
@@ -104,12 +103,10 @@
           "name": "default"
         }
       },
-
     ],
-
   },
   "canary": {
-    "Jul-23": [
+    "7-23": [
       {
         "name": "cc-limit-user-bindings",
         "namespace": "feature-toggle",
@@ -160,9 +157,8 @@
           "name": "default"
         }
       },
-
     ],
-    "Aug-23": [
+    "8-23": [
       {
         "name": "rmpatchrevisionid",
         "namespace": "feature-toggle",
