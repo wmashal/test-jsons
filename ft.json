@@ -1,6 +1,6 @@
 {
   "staging": {
-    "7-23": [
+    "7_23": [
       {
         "name": "cc-limit-user-bindings",
         "namespace": "feature-toggle",
@@ -52,7 +52,7 @@
         }
       },
     ],
-    "8-23": [
+    "8_23": [
       {
         "name": "rmpatchrevisionid",
         "namespace": "feature-toggle",
@@ -106,7 +106,7 @@
     ],
   },
   "canary": {
-    "7-23": [
+    "7_23": [
       {
         "name": "cc-limit-user-bindings",
         "namespace": "feature-toggle",
@@ -158,7 +158,7 @@
         }
       },
     ],
-    "8-23": [
+    "8_23": [
       {
         "name": "rmpatchrevisionid",
         "namespace": "feature-toggle",
