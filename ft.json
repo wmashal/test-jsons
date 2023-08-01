@@ -52,58 +52,6 @@
         }
       },
     ],
-    "8_23": [
-      {
-        "name": "rmpatchrevisionid",
-        "namespace": "feature-toggle",
-        "creationTimestamp": "2023-05-21T15:18:22Z",
-        "enabled": null,
-        "version": 0,
-        "strategy": {
-          "name": "default"
-        }
-      },
-      {
-        "name": "rmratelimit",
-        "namespace": "feature-toggle",
-        "creationTimestamp": "2023-03-14T10:48:29Z",
-        "enabled": true,
-        "version": 0,
-        "strategy": {
-          "name": "default"
-        }
-      },
-      {
-        "name": "some-test-ft-scenario",
-        "namespace": "feature-toggle",
-        "creationTimestamp": "2023-06-13T06:01:10Z",
-        "enabled": null,
-        "version": 1,
-        "strategy": {
-          "name": "default"
-        }
-      },
-      {
-        "name": "test-feature-toggle-lock",
-        "namespace": "feature-toggle",
-        "creationTimestamp": "2023-06-11T07:12:15Z",
-        "enabled": null,
-        "version": 1,
-        "strategy": {
-          "name": "default"
-        }
-      },
-      {
-        "name": "ua-restrict-initial-admins",
-        "namespace": "feature-toggle",
-        "creationTimestamp": "2023-05-21T15:18:22Z",
-        "enabled": true,
-        "version": 2,
-        "strategy": {
-          "name": "default"
-        }
-      },
-    ],
   },
   "canary": {
     "7_23": [
