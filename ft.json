@@ -1,246 +1,224 @@
 {
-  "staging": [
-    {
-      "name": "cc-limit-user-bindings",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-07-02T05:32:06Z",
-      "enabled": false,
-      "version": 6,
-      "creation_date": "1/7/2023",
-      "modefied_date": "1/7/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "cim-publish-to-root-governance",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-07-06T08:11:58Z",
-      "enabled": true,
-      "version": 6,
-      "creation_date": "1/7/2023",
-      "modefied_date": "1/7/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "cim-reconcile-optimizations",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-02-06T09:01:00Z",
-      "enabled": true,
-      "version": 2,
-      "creation_date": "1/7/2023",
-      "modefied_date": "1/7/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "demo-toggle",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-06-13T19:13:26Z",
-      "enabled": false,
-      "version": 12,
-      "creation_date": "1/7/2023",
-      "modefied_date": "1/7/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "rmcertificaterevokedvalidation",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-05-21T15:18:22Z",
-      "enabled": null,
-      "version": 0,
-      "creation_date": "1/7/2023",
-      "modefied_date": "1/7/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "rmpatchrevisionid",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-05-21T15:18:22Z",
-      "enabled": null,
-      "version": 0,
-      "creation_date": "1/7/2023",
-      "modefied_date": "1/7/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "rmratelimit",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-03-14T10:48:29Z",
-      "enabled": true,
-      "version": 0,
-      "creation_date": "1/7/2023",
-      "modefied_date": "1/7/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "some-test-ft-scenario",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-06-13T06:01:10Z",
-      "enabled": null,
-      "version": 1,
-      "creation_date": "1/7/2023",
-      "modefied_date": "1/7/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "test-feature-toggle-lock",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-06-11T07:12:15Z",
-      "enabled": null,
-      "version": 1,
-      "creation_date": "1/7/2023",
-      "modefied_date": "1/7/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "ua-restrict-initial-admins",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-05-21T15:18:22Z",
-      "enabled": true,
-      "version": 2,
-      "creation_date": "1/7/2023",
-      "modefied_date": "1/7/2023",
-      "strategy": {
-        "name": "default"
-      }
-    }
-  ],
-  "canary": [
-    {
-      "name": "cc-limit-user-bindings",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-07-02T05:32:06Z",
-      "enabled": false,
-      "version": 6,
-      "creation_date": "1/8/2023",
-      "modefied_date": "1/8/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "cim-publish-to-root-governance",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-07-06T08:11:58Z",
-      "enabled": true,
-      "version": 6,
-      "creation_date": "1/8/2023",
-      "modefied_date": "1/8/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "cim-reconcile-optimizations",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-02-06T09:01:00Z",
-      "enabled": true,
-      "version": 2,
-      "creation_date": "1/8/2023",
-      "modefied_date": "1/8/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "demo-toggle",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-06-13T19:13:26Z",
-      "enabled": false,
-      "version": 12,
-      "creation_date": "1/8/2023",
-      "modefied_date": "1/8/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "rmcertificaterevokedvalidation",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-05-21T15:18:22Z",
-      "enabled": null,
-      "version": 0,
-      "creation_date": "1/8/2023",
-      "modefied_date": "1/8/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "rmpatchrevisionid",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-05-21T15:18:22Z",
-      "enabled": null,
-      "version": 0,
-      "creation_date": "1/8/2023",
-      "modefied_date": "1/8/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "rmratelimit",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-03-14T10:48:29Z",
-      "enabled": true,
-      "version": 0,
-      "creation_date": "1/8/2023",
-      "modefied_date": "1/8/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "some-test-ft-scenario",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-06-13T06:01:10Z",
-      "enabled": null,
-      "version": 1,
-      "creation_date": "1/8/2023",
-      "modefied_date": "1/8/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "test-feature-toggle-lock",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-06-11T07:12:15Z",
-      "enabled": null,
-      "version": 1,
-      "creation_date": "1/8/2023",
-      "modefied_date": "1/8/2023",
-      "strategy": {
-        "name": "default"
-      }
-    },
-    {
-      "name": "ua-restrict-initial-admins",
-      "namespace": "feature-toggle",
-      "creationTimestamp": "2023-05-21T15:18:22Z",
-      "enabled": true,
-      "version": 2,
-      "creation_date": "1/8/2023",
-      "modefied_date": "1/8/2023",
-      "strategy": {
-        "name": "default"
-      }
-    }
-  ]
+	"staging": [{
+			"name": "cc-limit-user-bindings",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": false,
+			"version": 6,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "cim-publish-to-root-governance",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": true,
+			"version": 6,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "cim-reconcile-optimizations",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": true,
+			"version": 2,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "demo-toggle",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": false,
+			"version": 12,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "rmcertificaterevokedvalidation",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": null,
+			"version": 0,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "rmpatchrevisionid",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": null,
+			"version": 0,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "rmratelimit",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": true,
+			"version": 0,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "some-test-ft-scenario",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": null,
+			"version": 1,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "test-feature-toggle-lock",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": null,
+			"version": 1,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "ua-restrict-initial-admins",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": true,
+			"version": 2,
+			"strategy": {
+				"name": "default"
+			}
+		}
+	],
+	"canary": [{
+			"name": "cc-limit-user-bindings",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": false,
+			"version": 6,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "cim-publish-to-root-governance",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": true,
+			"version": 6,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "cim-reconcile-optimizations",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": true,
+			"version": 2,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "demo-toggle",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": false,
+			"version": 12,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "rmcertificaterevokedvalidation",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": null,
+			"version": 0,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "rmpatchrevisionid",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": null,
+			"version": 0,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "rmratelimit",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": true,
+			"version": 0,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "some-test-ft-scenario",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": null,
+			"version": 1,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "test-feature-toggle-lock",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": null,
+			"version": 1,
+			"strategy": {
+				"name": "default"
+			}
+		},
+		{
+			"name": "ua-restrict-initial-admins",
+			"namespace": "feature-toggle",
+			"creationTimestamp": "2023-07-02T05:32:06Z",
+			"modefiedTimestamp": "2023-07-02T05:32:06Z",
+			"enabled": true,
+			"version": 2,
+			"strategy": {
+				"name": "default"
+			}
+		}
+	]
 }
