@@ -6,7 +6,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": false,
-        "landscape": "staging",
+        			"landscape": "staging",
+				"componentName":"core-controllers",
+				"createdBy":"Shachar Malachi",
 				"version": 6,
 				"strategy": {
 					"name": "default"
@@ -18,7 +20,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": true,
-        "landscape": "staging",
+        			"landscape": "staging",
+				"componentName":"commercial-integration-manager",
+				"createdBy":"Gilad Keinan",
 				"version": 6,
 				"strategy": {
 					"name": "default"
@@ -30,7 +34,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": true,
-        "landscape": "staging",
+        			"landscape": "staging",
+				"componentName":"commercial-integration-manager",
+				"createdBy":"Nabeel Hodroj",
 				"version": 2,
 				"strategy": {
 					"name": "default"
@@ -42,7 +48,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": false,
-        "landscape": "staging",
+        			"landscape": "staging",
+				"componentName":"commercial-integration-manager",
+				"createdBy":"Mai Shani",				
 				"version": 12,
 				"strategy": {
 					"name": "default"
@@ -54,7 +62,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": null,
-        "landscape": "staging",
+        			"landscape": "staging",
+				"componentName":"resources-server",
+				"createdBy":"Arik Shadmi",				
 				"version": 0,
 				"strategy": {
 					"name": "default"
@@ -66,7 +76,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": null,
-        "landscape": "staging",
+        			"landscape": "staging",
+				"componentName":"resources-server",
+				"createdBy":"Yulia Kolesnikov",				
 				"version": 0,
 				"strategy": {
 					"name": "default"
@@ -78,7 +90,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": true,
-        "landscape": "staging",
+        			"landscape": "staging",
+				"componentName":"resources-server",
+				"createdBy":"Yulia Kolesnikov",				
 				"version": 0,
 				"strategy": {
 					"name": "default"
@@ -90,7 +104,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": null,
-        "landscape": "staging",
+        			"landscape": "staging",
+				"componentName":"some-test-ft-scenario",
+				"createdBy":"Nati Gavriel",				
 				"version": 1,
 				"strategy": {
 					"name": "default"
@@ -102,7 +118,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": null,
-        "landscape": "staging",
+        			"landscape": "staging",
+				"componentName":"some-test-ft-scenario",
+				"createdBy":"Nati Gavriel",				
 				"version": 1,
 				"strategy": {
 					"name": "default"
@@ -114,19 +132,23 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": true,
-        "landscape": "staging",
+        			"landscape": "staging",
+				"componentName":"some-test-ft-scenario",
+				"createdBy":"Aviv Guy",				
 				"version": 2,
 				"strategy": {
 					"name": "default"
 				}
 			},
-{
+			{
 				"name": "cc-limit-user-bindings",
 				"namespace": "feature-toggle",
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": false,
-        "landscape": "canary",
+        			"landscape": "canary",
+				"componentName":"core-controllers",
+				"createdBy":"Shachar Malachi",				
 				"version": 6,
 				"strategy": {
 					"name": "default"
@@ -138,7 +160,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": true,
-        "landscape": "canary",
+        			"landscape": "canary",
+				"componentName":"commercial-integration-manager",
+				"createdBy":"Gilad Keinan",
 				"version": 6,
 				"strategy": {
 					"name": "default"
@@ -150,7 +174,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": true,
-        "landscape": "canary",
+        			"landscape": "canary",
+				"componentName":"commercial-integration-manager",
+				"createdBy":"Nabeel Hodroj",				
 				"version": 2,
 				"strategy": {
 					"name": "default"
@@ -162,7 +188,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": false,
-        "landscape": "canary",
+        		        "landscape": "canary",
+				"componentName":"commercial-integration-manager",
+				"createdBy":"Mai Shani",				
 				"version": 12,
 				"strategy": {
 					"name": "default"
@@ -174,7 +202,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": null,
-        "landscape": "canary",
+        			"landscape": "canary",
+				"componentName":"resources-server",
+				"createdBy":"Arik Shadmi",				
 				"version": 0,
 				"strategy": {
 					"name": "default"
@@ -186,7 +216,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": null,
-        "landscape": "canary",
+        			"landscape": "canary",
+				"componentName":"resources-server",
+				"createdBy":"Yulia Kolesnikov",
 				"version": 0,
 				"strategy": {
 					"name": "default"
@@ -198,7 +230,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": true,
-        "landscape": "canary",
+        			"landscape": "canary",
+				"componentName":"resources-server",
+				"createdBy":"Yulia Kolesnikov",				
 				"version": 0,
 				"strategy": {
 					"name": "default"
@@ -210,7 +244,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": null,
-        "landscape": "canary",
+        			"landscape": "canary",
+				"componentName":"some-test-ft-scenario",
+				"createdBy":"Nati Gavriel",
 				"version": 1,
 				"strategy": {
 					"name": "default"
@@ -222,7 +258,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": null,
-        "landscape": "canary",
+        			"landscape": "canary",
+				"componentName":"some-test-ft-scenario",
+				"createdBy":"Nati Gavriel",				
 				"version": 1,
 				"strategy": {
 					"name": "default"
@@ -234,7 +272,9 @@
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
 				"enabled": true,
-        "landscape": "canary",
+        			"landscape": "canary",
+				"componentName":"some-test-ft-scenario",
+				"createdBy":"Aviv Guy",				
 				"version": 2,
 				"strategy": {
 					"name": "default"
