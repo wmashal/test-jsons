@@ -10,6 +10,7 @@
 				"componentName":"core-controllers",
 				"createdBy":"Shachar Malachi",
 				"locked":"false",
+				"BLI":"SAPBTPCFS-6775",
 				"version": 6,
 				"strategy": {
 					"name": "default"
@@ -24,7 +25,8 @@
         			"landscape": "staging",
 				"componentName":"commercial-integration-manager",
 				"createdBy":"Gilad Keinan",
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"SAPBTPCFS-6755",
 				"version": 6,
 				"strategy": {
 					"name": "default"
@@ -39,7 +41,8 @@
         			"landscape": "staging",
 				"componentName":"commercial-integration-manager",
 				"createdBy":"Nabeel Hodroj",
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"",
 				"version": 2,
 				"strategy": {
 					"name": "default"
@@ -54,7 +57,8 @@
         			"landscape": "staging",
 				"componentName":"commercial-integration-manager",
 				"createdBy":"Mai Shani",
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"",
 				"version": 12,
 				"strategy": {
 					"name": "default"
@@ -69,7 +73,8 @@
         			"landscape": "staging",
 				"componentName":"resources-server",
 				"createdBy":"Arik Shadmi",
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"",
 				"version": 0,
 				"strategy": {
 					"name": "default"
@@ -84,7 +89,8 @@
         			"landscape": "staging",
 				"componentName":"resources-server",
 				"createdBy":"Yulia Kolesnikov",		
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"",
 				"version": 0,
 				"strategy": {
 					"name": "default"
@@ -99,7 +105,8 @@
         			"landscape": "staging",
 				"componentName":"resources-server",
 				"createdBy":"Yulia Kolesnikov",	
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"",
 				"version": 0,
 				"strategy": {
 					"name": "default"
@@ -114,22 +121,8 @@
         			"landscape": "staging",
 				"componentName":"some-test-ft-scenario",
 				"createdBy":"Nati Gavriel",
-				"locked":"false",				
-				"version": 1,
-				"strategy": {
-					"name": "default"
-				}
-			},
-			{
-				"name": "test-feature-toggle-lock",
-				"namespace": "feature-toggle",
-				"creationTimestamp": "2023-07-02T05:32:06Z",
-				"modefiedTimestamp": "2023-07-02T05:32:06Z",
-				"enabled": null,
-        			"landscape": "staging",
-				"componentName":"some-test-ft-scenario",
-				"createdBy":"Nati Gavriel",	
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"",
 				"version": 1,
 				"strategy": {
 					"name": "default"
@@ -144,7 +137,8 @@
         			"landscape": "staging",
 				"componentName":"some-test-ft-scenario",
 				"createdBy":"Aviv Guy",		
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"",
 				"version": 2,
 				"strategy": {
 					"name": "default"
@@ -159,7 +153,8 @@
         			"landscape": "canary",
 				"componentName":"core-controllers",
 				"createdBy":"Shachar Malachi",
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"SAPBTPCFS-6775",
 				"version": 6,
 				"strategy": {
 					"name": "default"
@@ -174,7 +169,8 @@
         			"landscape": "canary",
 				"componentName":"commercial-integration-manager",
 				"createdBy":"Gilad Keinan",
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"SAPBTPCFS-6755",
 				"version": 6,
 				"strategy": {
 					"name": "default"
@@ -189,7 +185,8 @@
         			"landscape": "canary",
 				"componentName":"commercial-integration-manager",
 				"createdBy":"Nabeel Hodroj",
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"",
 				"version": 2,
 				"strategy": {
 					"name": "default"
@@ -204,7 +201,8 @@
         		        "landscape": "canary",
 				"componentName":"commercial-integration-manager",
 				"createdBy":"Mai Shani",
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"",
 				"version": 12,
 				"strategy": {
 					"name": "default"
@@ -219,7 +217,8 @@
         			"landscape": "canary",
 				"componentName":"resources-server",
 				"createdBy":"Arik Shadmi",
-				"locked":"true",				
+				"locked":"true",
+				"BLI":"",
 				"version": 0,
 				"strategy": {
 					"name": "default"
@@ -234,7 +233,8 @@
         			"landscape": "canary",
 				"componentName":"resources-server",
 				"createdBy":"Yulia Kolesnikov",
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"",
 				"version": 0,
 				"strategy": {
 					"name": "default"
@@ -249,7 +249,8 @@
         			"landscape": "canary",
 				"componentName":"resources-server",
 				"createdBy":"Yulia Kolesnikov",	
-				"locked":"true",				
+				"locked":"true",
+				"BLI":"",
 				"version": 0,
 				"strategy": {
 					"name": "default"
@@ -264,7 +265,8 @@
         			"landscape": "canary",
 				"componentName":"some-test-ft-scenario",
 				"createdBy":"Nati Gavriel",
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"",
 				"version": 1,
 				"strategy": {
 					"name": "default"
@@ -279,7 +281,8 @@
         			"landscape": "canary",
 				"componentName":"some-test-ft-scenario",
 				"createdBy":"Nati Gavriel",
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"",
 				"version": 1,
 				"strategy": {
 					"name": "default"
@@ -294,7 +297,8 @@
         			"landscape": "canary",
 				"componentName":"some-test-ft-scenario",
 				"createdBy":"Aviv Guy",	
-				"locked":"false",				
+				"locked":"false",
+				"BLI":"",
 				"version": 2,
 				"strategy": {
 					"name": "default"
