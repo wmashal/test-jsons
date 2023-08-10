@@ -10,6 +10,7 @@
 				"componentName":"core-controllers",
 				"createdBy":"Shachar Malachi",
 				"locked":"false",
+				"lastLockTimestamp": "",
 				"BLI":"SAPBTPCFS-6775",
 				"version": 6,
 				"strategy": {
@@ -26,6 +27,7 @@
 				"componentName":"commercial-integration-manager",
 				"createdBy":"Gilad Keinan",
 				"locked":"false",
+				"lastLockTimestamp": "",
 				"BLI":"SAPBTPCFS-6755",
 				"version": 6,
 				"strategy": {
@@ -41,7 +43,8 @@
         			"landscape": "staging",
 				"componentName":"resources-server",
 				"createdBy":"Yulia Kolesnikov",	
-				"locked":"true",
+				"locked":"false",
+	      			"lastLockTimestamp": "",
 				"BLI":"",
 				"version": 0,
 				"strategy": {
@@ -58,6 +61,7 @@
 				"componentName":"core-controllers",
 				"createdBy":"Shachar Malachi",
 				"locked":"false",
+	      			"lastLockTimestamp": "",
 				"BLI":"SAPBTPCFS-6775",
 				"version": 6,
 				"strategy": {
@@ -74,6 +78,7 @@
 				"componentName":"commercial-integration-manager",
 				"createdBy":"Gilad Keinan",
 				"locked":"false",
+				"lastLockTimestamp": "",
 				"BLI":"SAPBTPCFS-6755",
 				"version": 6,
 				"strategy": {
@@ -89,7 +94,8 @@
         			"landscape": "Int",
 				"componentName":"resources-server",
 				"createdBy":"Yulia Kolesnikov",	
-				"locked":"true",
+				"locked":"false",
+	      			"lastLockTimestamp": "",
 				"BLI":"",
 				"version": 0,
 				"strategy": {
@@ -106,6 +112,7 @@
 				"componentName":"core-controllers",
 				"createdBy":"Shachar Malachi",
 				"locked":"false",
+	      			"lastLockTimestamp": "",
 				"BLI":"SAPBTPCFS-6775",
 				"version": 6,
 				"strategy": {
@@ -122,6 +129,7 @@
 				"componentName":"commercial-integration-manager",
 				"createdBy":"Gilad Keinan",
 				"locked":"false",
+	      			"lastLockTimestamp": "",
 				"BLI":"SAPBTPCFS-6755",
 				"version": 6,
 				"strategy": {
@@ -137,7 +145,8 @@
         			"landscape": "canary",
 				"componentName":"resources-server",
 				"createdBy":"Yulia Kolesnikov",	
-				"locked":"true",
+				"locked":"false",
+	      			"lastLockTimestamp": "",
 				"BLI":"",
 				"version": 0,
 				"strategy": {
@@ -154,6 +163,7 @@
 				"componentName":"core-controllers",
 				"createdBy":"Shachar Malachi",
 				"locked":"false",
+	      			"lastLockTimestamp": "",
 				"BLI":"SAPBTPCFS-6775",
 				"version": 6,
 				"strategy": {
@@ -170,6 +180,7 @@
 				"componentName":"commercial-integration-manager",
 				"createdBy":"Gilad Keinan",
 				"locked":"false",
+	      			"lastLockTimestamp": "",
 				"BLI":"SAPBTPCFS-6755",
 				"version": 6,
 				"strategy": {
@@ -186,6 +197,7 @@
 				"componentName":"resources-server",
 				"createdBy":"Yulia Kolesnikov",	
 				"locked":"true",
+				"lastLockTimestamp": "2023-08-10T05:32:06Z",
 				"BLI":"",
 				"version": 0,
 				"strategy": {
@@ -202,6 +214,7 @@
 				"componentName":"core-controllers",
 				"createdBy":"Shachar Malachi",
 				"locked":"false",
+	      			"lastLockTimestamp": "",
 				"BLI":"SAPBTPCFS-6775",
 				"version": 6,
 				"strategy": {
@@ -218,6 +231,7 @@
 				"componentName":"commercial-integration-manager",
 				"createdBy":"Gilad Keinan",
 				"locked":"false",
+	      			"lastLockTimestamp": "",
 				"BLI":"SAPBTPCFS-6755",
 				"version": 6,
 				"strategy": {
@@ -234,6 +248,7 @@
 				"componentName":"resources-server",
 				"createdBy":"Yulia Kolesnikov",	
 				"locked":"true",
+				"lastLockTimestamp": "2023-08-04T05:32:06Z",
 				"BLI":"",
 				"version": 0,
 				"strategy": {
