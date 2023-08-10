@@ -1,0 +1,244 @@
+{
+
+		"feature-toggles": [{
+				"name": "cc-limit-user-bindings",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": false,
+        			"landscape": "staging",
+				"componentName":"core-controllers",
+				"createdBy":"Shachar Malachi",
+				"locked":"false",
+				"BLI":"SAPBTPCFS-6775",
+				"version": 6,
+				"strategy": {
+					"name": "default"
+				}
+			},
+			{
+				"name": "cim-publish-to-root-governance",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": true,
+        			"landscape": "staging",
+				"componentName":"commercial-integration-manager",
+				"createdBy":"Gilad Keinan",
+				"locked":"false",
+				"BLI":"SAPBTPCFS-6755",
+				"version": 6,
+				"strategy": {
+					"name": "default"
+				}
+			},
+      {
+				"name": "rmratelimit",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": true,
+        			"landscape": "staging",
+				"componentName":"resources-server",
+				"createdBy":"Yulia Kolesnikov",	
+				"locked":"true",
+				"BLI":"",
+				"version": 0,
+				"strategy": {
+					"name": "default"
+				}
+			},
+      {
+				"name": "cc-limit-user-bindings",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": false,
+        			"landscape": "Int",
+				"componentName":"core-controllers",
+				"createdBy":"Shachar Malachi",
+				"locked":"false",
+				"BLI":"SAPBTPCFS-6775",
+				"version": 6,
+				"strategy": {
+					"name": "default"
+				}
+			},
+			{
+				"name": "cim-publish-to-root-governance",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": true,
+        			"landscape": "Int",
+				"componentName":"commercial-integration-manager",
+				"createdBy":"Gilad Keinan",
+				"locked":"false",
+				"BLI":"SAPBTPCFS-6755",
+				"version": 6,
+				"strategy": {
+					"name": "default"
+				}
+			},
+      {
+				"name": "rmratelimit",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": true,
+        			"landscape": "Int",
+				"componentName":"resources-server",
+				"createdBy":"Yulia Kolesnikov",	
+				"locked":"true",
+				"BLI":"",
+				"version": 0,
+				"strategy": {
+					"name": "default"
+				}
+			},
+			{
+				"name": "cc-limit-user-bindings",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": false,
+        			"landscape": "canary",
+				"componentName":"core-controllers",
+				"createdBy":"Shachar Malachi",
+				"locked":"false",
+				"BLI":"SAPBTPCFS-6775",
+				"version": 6,
+				"strategy": {
+					"name": "default"
+				}
+			},
+			{
+				"name": "cim-publish-to-root-governance",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": true,
+        			"landscape": "canary",
+				"componentName":"commercial-integration-manager",
+				"createdBy":"Gilad Keinan",
+				"locked":"false",
+				"BLI":"SAPBTPCFS-6755",
+				"version": 6,
+				"strategy": {
+					"name": "default"
+				}
+			},
+			{
+				"name": "rmratelimit",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": true,
+        			"landscape": "canary",
+				"componentName":"resources-server",
+				"createdBy":"Yulia Kolesnikov",	
+				"locked":"true",
+				"BLI":"",
+				"version": 0,
+				"strategy": {
+					"name": "default"
+				}
+			},
+      {
+				"name": "cc-limit-user-bindings",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": false,
+        			"landscape": "hotfix",
+				"componentName":"core-controllers",
+				"createdBy":"Shachar Malachi",
+				"locked":"false",
+				"BLI":"SAPBTPCFS-6775",
+				"version": 6,
+				"strategy": {
+					"name": "default"
+				}
+			},
+			{
+				"name": "cim-publish-to-root-governance",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": true,
+        			"landscape": "hotfix",
+				"componentName":"commercial-integration-manager",
+				"createdBy":"Gilad Keinan",
+				"locked":"false",
+				"BLI":"SAPBTPCFS-6755",
+				"version": 6,
+				"strategy": {
+					"name": "default"
+				}
+			},
+			{
+				"name": "rmratelimit",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": true,
+        			"landscape": "hotfix",
+				"componentName":"resources-server",
+				"createdBy":"Yulia Kolesnikov",	
+				"locked":"true",
+				"BLI":"",
+				"version": 0,
+				"strategy": {
+					"name": "default"
+				}
+			},
+      {
+				"name": "cc-limit-user-bindings",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": false,
+        			"landscape": "live",
+				"componentName":"core-controllers",
+				"createdBy":"Shachar Malachi",
+				"locked":"false",
+				"BLI":"SAPBTPCFS-6775",
+				"version": 6,
+				"strategy": {
+					"name": "default"
+				}
+			},
+			{
+				"name": "cim-publish-to-root-governance",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": true,
+        			"landscape": "live",
+				"componentName":"commercial-integration-manager",
+				"createdBy":"Gilad Keinan",
+				"locked":"false",
+				"BLI":"SAPBTPCFS-6755",
+				"version": 6,
+				"strategy": {
+					"name": "default"
+				}
+			},
+			{
+				"name": "rmratelimit",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": true,
+        			"landscape": "live",
+				"componentName":"resources-server",
+				"createdBy":"Yulia Kolesnikov",	
+				"locked":"true",
+				"BLI":"",
+				"version": 0,
+				"strategy": {
+					"name": "default"
+				}
+			},
+		]
+}
