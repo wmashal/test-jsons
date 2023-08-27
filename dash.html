@@ -1,0 +1,227 @@
+<html>
+   <head>
+
+      <title>Feature Toggle Configurations Status (fetched at: 23/08/2023 12:23)</title>
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css">
+      <link rel="stylesheet" href="https://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js"></script>
+      <script src="https://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script>
+
+      <script src="https://use.fontawesome.com/releases/6.4.2/js/all.min.js" data-auto-replace-svg="nest"></script>
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+      <script>
+
+    //   $(document).ready(function() {
+          var $table = $('#table');
+              $(function () {
+                  $('#toolbar').find('select').change(function () {
+                      $table.bootstrapTable('refreshOptions', {
+                          exportDataType: $(this).val()
+                      });
+                  });
+              })
+
+              var trBoldBlue = $("table");
+
+            $(trBoldBlue).on("click", "tr", function (){
+                $(this).toggleClass("bold-blue");
+            });
+
+            function activeFormatter(value) {
+
+                return value ? '<i class="fa fa-check text-success"></i>' : '<i class="fa fa-times text-danger"></i>'
+            }
+
+
+    //  });
+            var xValues = new Set();;
+            var yValues = [];
+            var barColors = ["green"]
+
+            $.get("https://wmashal.github.io/test-jsons/ft3.json", function(data) {
+              //console.log(data);
+
+              const groupByToggleName = data["feature-toggles"].reduce((group, item) => {
+              const { name } = item;
+                group[name] = group[name] ?? [];
+                group[name].push(item);
+                return group;
+              }, {});
+
+
+              const groupByLandscape = data["feature-toggles"].reduce((group, item) => {
+              const { landscape } = item;
+                group[landscape] = group[landscape] ?? [];
+                group[landscape].push(item);
+                return group;
+              }, {});
+
+              //console.log(groupByToggleName);
+              //console.log(groupByLandscape);
+
+              // You can access specific fields in the JSON data like this:
+              var columnHeaders = ["Name", "Component Name", "Created By", "Staging", "Integrate", "Canary", "Perf", "Hotfix", "Live"]
+              var headerRow = document.createElement("tr");
+
+              var checkboxesRowHeaderCell = document.createElement("th");
+              $(checkboxesRowHeaderCell).attr("data-field", "state");
+              $(checkboxesRowHeaderCell).attr("data-checkbox", "true");
+              headerRow.appendChild(checkboxesRowHeaderCell);
+
+
+              columnHeaders.forEach(function(header) {
+                var headerCell = document.createElement("th");
+                headerCell.textContent = header;
+
+                let dataFilterControl = header === "Name" ? "input" : "select";
+
+                $(headerCell).attr("data-field", header.replace(" ","").toLowerCase());
+                $(headerCell).attr("data-filter-control", "input");
+                $(headerCell).attr("data-sortable", "true");
+                headerRow.appendChild(headerCell);
+              });
+
+              $("table thead").append(headerRow);
+
+
+              var count = 0;
+              $.each(groupByToggleName, function(key,value) {
+
+                //console.log(key);
+
+                var item = value[count++];
+                //console.log(value);
+                var row = document.createElement("tr");
+
+                var checkboxCell = document.createElement("td");
+                var checkboxCellInput = document.createElement("input");
+                $(checkboxCell).addClass("bs-checkbox ")
+                $(checkboxCellInput).attr("data-index", ""+count);
+                $(checkboxCellInput).attr("name", "btSelectItem");
+                $(checkboxCellInput).attr("type", "checkbox");
+                checkboxCell.textContent = "";
+                checkboxCell.append(checkboxCellInput)
+                row.appendChild(checkboxCell);
+
+
+                var nameCell = document.createElement("td");
+                nameCell.textContent = key;
+                row.appendChild(nameCell);
+
+                var componentNameCell = document.createElement("td");
+                componentNameCell.textContent = item["componentName"];
+                row.appendChild(componentNameCell);
+
+                var createdByCell = document.createElement("td");
+                createdByCell.textContent = item["createdBy"];
+                row.appendChild(createdByCell);
+
+                // Create cells for each landscape
+                //columnHeaders.slice(3).forEach(function(landscape) {
+                var numberOfTogglesPerLandscape = 0;
+                $.each(value, function(key,togglevalue) {
+
+                  xValues.add(togglevalue["landscape"]);
+
+                  var landscapeCell = document.createElement("td");
+                  text = togglevalue["enabled"] === false ? "Disabled" : "Enabled";
+
+                  if(togglevalue["locked"] === "true"){
+                      $(landscapeCell).html('<ul><i class="fa-solid fa-lock" style="color: #cc0000;"></i></ul>')
+                  }else{
+                      $(landscapeCell).html('<ul><i class="fa-solid fa-unlock" style="color: #249b03;"></i></ul>')
+                  }
+                  row.appendChild(landscapeCell);
+                  //numberOfTogglesPerLandscape = 0;
+                });
+
+                $("table tbody").append(row);
+              });
+
+              $.each(groupByLandscape, function(key,value) {
+                console.info(key)
+                yValues.push(value.length)
+              });
+
+              console.log(xValues);
+              console.log(yValues);
+
+              const landscapesTogglesCounterBarChart = new Chart("landscapesTogglesCounterBarChart", {
+                  type: "bar",
+                  data: {
+                    labels: Array.from(xValues),
+                    datasets:[{
+                      label: '# of Feature Toggles',
+                      backgroundColor: barColors,
+                      data: yValues,
+                      borderWidth: 1
+                    }]
+                  },
+                    options: {
+                      scale: {
+                          ticks: {
+                            precision: 0
+                          }
+                        }
+                    }
+                });
+            });
+
+
+
+      </script>
+
+   </head>
+   <body>
+      <h1>Feature Toggle Configurations Status (fetched at: 23/08/2023 12:23)</h1>
+      <canvas id="landscapesTogglesCounterBarChart" style="width:100%;max-width:700px;height:100px"></canvas>
+
+
+            <div class="container" style="width:100%">
+            <div id="toolbar">
+            		<select class="form-control">
+            				<option value="">Export Basic</option>
+            				<option value="all">Export All</option>
+            				<option value="selected">Export Selected</option>
+            		</select>
+            </div>
+
+            <table id="table"
+            			 data-toggle="table"
+            			 data-search="true"
+            			 data-filter-control="true"
+            			 data-click-to-select="true"
+                   data-show-export="true"
+            			 data-toolbar="#toolbar"
+                   class="table-responsive table-striped">
+            	<thead>
+
+            	</thead>
+            	<tbody>
+            	</tbody>
+            </table>
+            </div>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css">
+            <link rel="stylesheet" href="https://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+   </body>
+</html>
