@@ -1,7 +1,7 @@
 <html>
    <head>
 
-      <title>Feature Toggle Configurations Status (fetched at: 23/08/2023 12:23)</title>
+      <title>Feature Toggle Configurations Status</title>
 
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
@@ -57,6 +57,15 @@
                     }, {});
 
 
+                    const groupByLockState = data["feature-toggles"].reduce((group, item) => {
+                    const { locked } = item;
+                      group[locked] = group[locked] ?? [];
+                      group[locked].push(item);
+                      return group;
+                    }, {});
+
+                    console.info(groupByLockState)
+
 
                     var count = 0;
                     $.each(groupByToggleName, function(key,value) {
@@ -86,22 +95,22 @@
                       // Create cells for each landscape
                       var numberOfTogglesPerLandscape = 0;
                       $.each(value, function(key,togglevalue) {
-                        console.info(togglevalue["landscape"])
+                        //console.info(togglevalue["landscape"])
                         xValues.add(togglevalue["landscape"]);
 
                         var landscapeCell = document.createElement("td");
                         state = togglevalue["enabled"] === false ? $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #bd0000;"></i>') : $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #3b9c07;"></i>');
 
                         if(togglevalue["locked"] === "true"){
-                            $(landscapeCell).append('  <i class="fa-solid fa-lock" style="color: #cc0000;"></i>')
+                            $(landscapeCell).append(' <i class="fa-solid fa-lock" style="color: #cc0000;"></i>')
                         }else{
-                            $(landscapeCell).append('  <i class="fa-solid fa-unlock" style="color: #249b03;"></i>')
+                            $(landscapeCell).append(' <i class="fa-solid fa-unlock" style="color: #249b03;"></i>')
                         }
 
                         rowArr.push($(landscapeCell).html())
                       });
 
-                      console.log(rowArr)
+                      //console.log(rowArr)
                       table.row
                           .add(rowArr)
                           .draw(false);
@@ -109,12 +118,12 @@
                     });
 
                     $.each(groupByLandscape, function(key,value) {
-                      console.info(key)
+                      //console.info(key)
                       yValues.push(value.length)
                     });
 
-                    console.log(xValues);
-                    console.log(yValues);
+                    //console.log(xValues);
+                    //console.log(yValues);
 
                     const landscapesTogglesCounterBarChart = new Chart("landscapesTogglesCounterBarChart", {
                         type: "bar",
@@ -122,12 +131,21 @@
                           labels: Array.from(xValues),
                           datasets:[{
                             label: '# of Feature Toggles',
-                            backgroundColor: barColors,
+                            //backgroundColor: barColors,
+                            backgroundColor: [
+                              'rgba(255, 99, 132, 0.2)',
+                              'rgba(255, 159, 64, 0.2)',
+                              'rgba(255, 205, 86, 0.2)',
+                              'rgba(75, 192, 192, 0.2)',
+                              'rgba(54, 162, 235, 0.2)',
+                              'rgba(153, 102, 255, 0.2)',
+                            ],
                             data: yValues,
                             borderWidth: 1
                           }]
                         },
                           options: {
+                            //indexAxis: 'y',
                             scale: {
                                 ticks: {
                                   precision: 0
@@ -135,6 +153,31 @@
                               }
                           }
                       });
+
+
+
+                      const doughnutdata = {
+                          labels: [
+                            'Locked',
+                            'Unlocked',
+                          ],
+                          datasets: [{
+                            label: 'Locked Toggles Count',
+                            data: [groupByLockState[true].length,groupByLockState[false].length],
+                            backgroundColor: [
+                              'rgb(255, 99, 132)',
+                              'rgb(34, 139, 34)',
+                            ],
+                            hoverOffset: 4
+                          }]
+                        };
+
+                      const lockedCounterBarChart = new Chart("lockedCounterBarChart", {
+                          type: "doughnut",
+                          data: doughnutdata,
+                        });
+
+
                   });
 
       </script>
@@ -142,7 +185,10 @@
    </head>
    <body>
       <br>
-      <canvas id="landscapesTogglesCounterBarChart" style="width:100%;max-width:700px;height:100px"></canvas>
+      <div style="display:flex;gap: 10px 20px;width:100%;height:350px">
+        <canvas id="landscapesTogglesCounterBarChart"></canvas>
+        <canvas id="lockedCounterBarChart"></canvas>
+      </div>
       <br>
       <br>
             <table id="table" class="table table-striped table-bordered" style="width:100%">
