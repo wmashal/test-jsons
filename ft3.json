@@ -51,6 +51,60 @@
 					"name": "default"
 				}
 			},
+{
+				"name": "cc-limit-user-bindings",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": false,
+        			"landscape": "perf",
+				"componentName":"core-controllers",
+				"createdBy":"Shachar Malachi",
+				"locked":"false",
+				"lastLockTimestamp": "",
+				"BLI":"SAPBTPCFS-6775",
+				"version": 6,
+				"strategy": {
+					"name": "default"
+				}
+			},
+			{
+				"name": "cim-publish-to-root-governance",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": true,
+        			"landscape": "perf",
+				"componentName":"commercial-integration-manager",
+				"createdBy":"Gilad Keinan",
+				"locked":"false",
+				"lastLockTimestamp": "",
+				"BLI":"SAPBTPCFS-6755",
+				"version": 6,
+				"strategy": {
+					"name": "default"
+				}
+			},
+      {
+				"name": "rmratelimit",
+				"namespace": "feature-toggle",
+				"creationTimestamp": "2023-07-02T05:32:06Z",
+				"modefiedTimestamp": "2023-07-02T05:32:06Z",
+				"enabled": true,
+        			"landscape": "perf",
+				"componentName":"resources-server",
+				"createdBy":"Yulia Kolesnikov",	
+				"locked":"false",
+	      			"lastLockTimestamp": "",
+				"BLI":"",
+				"version": 0,
+				"strategy": {
+					"name": "default"
+				}
+			}
+,
+
+			
       {
 				"name": "cc-limit-user-bindings",
 				"namespace": "feature-toggle",
