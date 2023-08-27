@@ -18,32 +18,35 @@
       <script src="https://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script>-->
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+      <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
+      <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" data-auto-replace-svg="nest" data-observe-insertions="true"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
       <script>
 
-    //   $(document).ready(function() {
-    /**      var $table = $('#table');
-              $(function () {
-                  $('#toolbar').find('select').change(function () {
-                      $table.bootstrapTable('refreshOptions', {
-                          exportDataType: $(this).val()
-                      });
-                  });
-              })
+      // $(document).ready(function() {
+            /**      var $table = $('#table');
+                      $(function () {
+                          $('#toolbar').find('select').change(function () {
+                              $table.bootstrapTable('refreshOptions', {
+                                  exportDataType: $(this).val()
+                              });
+                          });
+                      })
 
-              var trBoldBlue = $("table");
+                      var trBoldBlue = $("table");
 
-            $(trBoldBlue).on("click", "tr", function (){
-                $(this).toggleClass("bold-blue");
-            });
-**/
+                    $(trBoldBlue).on("click", "tr", function (){
+                        $(this).toggleClass("bold-blue");
+                    });
+        **/
+
+
+          var table = $('#table').DataTable();
+
     //  });
-            var $table = $('#table').DataTable();
 
 
             var xValues = new Set();;
@@ -186,19 +189,17 @@
 
    </head>
    <body>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
       <h1>Feature Toggle Configurations Status (fetched at: 23/08/2023 12:23)</h1>
-     <canvas id="landscapesTogglesCounterBarChart" style="width:100%;max-width:700px;height:100px"></canvas>
+      <canvas id="landscapesTogglesCounterBarChart" style="width:100%;max-width:700px;height:100px"></canvas>
 
             <table id="table" class="display" style="width:100%">
             	<thead>
-
             	</thead>
             	<tbody>
             	</tbody>
-
             </table>
-
-
    </body>
 </html>
