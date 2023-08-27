@@ -3,200 +3,160 @@
 
       <title>Feature Toggle Configurations Status (fetched at: 23/08/2023 12:23)</title>
 
-      <!--
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css">
-      <link rel="stylesheet" href="https://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css">
 
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js"></script>
-      <script src="https://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script>-->
-
-      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
       <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
       <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+      <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" data-auto-replace-svg="nest" data-observe-insertions="true"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
       <script>
 
-      // $(document).ready(function() {
-            /**      var $table = $('#table');
-                      $(function () {
-                          $('#toolbar').find('select').change(function () {
-                              $table.bootstrapTable('refreshOptions', {
-                                  exportDataType: $(this).val()
-                              });
-                          });
-                      })
 
-                      var trBoldBlue = $("table");
+                  var xValues = new Set();;
+                  var yValues = [];
+                  var barColors = ["green"]
+                  var table;
 
-                    $(trBoldBlue).on("click", "tr", function (){
-                        $(this).toggleClass("bold-blue");
-                    });
-        **/
+                  $(document).ready(function() {
 
 
-          var table = $('#table').DataTable();
+                        table = $('#table').DataTable( {
+                                    select: true,
+                                    "columnDefs": [
+                                        { "width": "15%", "targets": 0 }
+                                      ],
+                                      pagingType: 'full_numbers'
+                                } );
 
-    //  });
+                   });
 
+                  $.get("https://wmashal.github.io/test-jsons/ft3.json", function(data) {
+                    //console.log(data);
 
-            var xValues = new Set();;
-            var yValues = [];
-            var barColors = ["green"]
-
-            $.get("https://wmashal.github.io/test-jsons/ft3.json", function(data) {
-              //console.log(data);
-
-              const groupByToggleName = data["feature-toggles"].reduce((group, item) => {
-              const { name } = item;
-                group[name] = group[name] ?? [];
-                group[name].push(item);
-                return group;
-              }, {});
-
-
-              const groupByLandscape = data["feature-toggles"].reduce((group, item) => {
-              const { landscape } = item;
-                group[landscape] = group[landscape] ?? [];
-                group[landscape].push(item);
-                return group;
-              }, {});
-
-              //console.log(groupByToggleName);
-              //console.log(groupByLandscape);
-
-              // You can access specific fields in the JSON data like this:
-              var columnHeaders = ["Name", "Component Name", "Created By", "Staging", "Integrate", "Canary", "Perf", "Hotfix", "Live"]
-
-              var headerRow = document.createElement("tr");
-
-              /** var checkboxesRowHeaderCell = document.createElement("th");
-              $(checkboxesRowHeaderCell).attr("data-field", "state");
-              $(checkboxesRowHeaderCell).attr("data-checkbox", "true");
-              headerRow.appendChild(checkboxesRowHeaderCell);**/
+                    const groupByToggleName = data["feature-toggles"].reduce((group, item) => {
+                    const { name } = item;
+                      group[name] = group[name] ?? [];
+                      group[name].push(item);
+                      return group;
+                    }, {});
 
 
-              columnHeaders.forEach(function(header) {
-                var headerCell = document.createElement("th");
-                headerCell.textContent = header;
-
-                let dataFilterControl = header === "Name" ? "input" : "select";
-
-            /**    $(headerCell).attr("data-field", header.replace(" ","").toLowerCase());
-                $(headerCell).attr("data-filter-control", "input");
-                $(headerCell).attr("data-sortable", "true");**/
-                headerRow.appendChild(headerCell);
-              });
+                    const groupByLandscape = data["feature-toggles"].reduce((group, item) => {
+                    const { landscape } = item;
+                      group[landscape] = group[landscape] ?? [];
+                      group[landscape].push(item);
+                      return group;
+                    }, {});
 
 
 
-              $("table thead").append(headerRow);
+                    var count = 0;
+                    $.each(groupByToggleName, function(key,value) {
+
+                      var item = value[count++];
+                      var row = document.createElement("tr");
+                      var rowArr = [];
+
+                      var nameCell = document.createElement("td");
+                      nameCell.textContent = key;
+                      rowArr.push($(nameCell).html())
+
+                      var componentNameCell = document.createElement("td");
+                      componentNameCell.textContent = item["componentName"];
+                      rowArr.push($(componentNameCell).html())
 
 
-              var count = 0;
-              $.each(groupByToggleName, function(key,value) {
+                      var createdByCell = document.createElement("td");
+                      createdByCell.textContent = item["createdBy"];
+                      rowArr.push($(createdByCell).html())
 
-                //console.log(key);
-
-                var item = value[count++];
-                //console.log(value);
-                var row = document.createElement("tr");
-
-                /** var checkboxCell = document.createElement("td");
-                var checkboxCellInput = document.createElement("input");
-                $(checkboxCell).addClass("bs-checkbox ")
-                $(checkboxCellInput).attr("data-index", ""+count);
-                $(checkboxCellInput).attr("name", "btSelectItem");
-                $(checkboxCellInput).attr("type", "checkbox");
-                checkboxCell.textContent = "";
-                checkboxCell.append(checkboxCellInput)
-                $(row).append(checkboxCell);**/
+                      var creationTimestamp = document.createElement("td");
+                      creationTimestamp.textContent = item["creationTimestamp"];
+                      rowArr.push($(creationTimestamp).html())
 
 
-                var nameCell = document.createElement("td");
-                nameCell.textContent = key;
-                $(row).append(nameCell);
+                      // Create cells for each landscape
+                      var numberOfTogglesPerLandscape = 0;
+                      $.each(value, function(key,togglevalue) {
+                        console.info(togglevalue["landscape"])
+                        xValues.add(togglevalue["landscape"]);
 
-                var componentNameCell = document.createElement("td");
-                componentNameCell.textContent = item["componentName"];
-                $(row).append(componentNameCell);
+                        var landscapeCell = document.createElement("td");
+                        state = togglevalue["enabled"] === false ? $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #bd0000;"></i>') : $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #3b9c07;"></i>');
 
-                var createdByCell = document.createElement("td");
-                createdByCell.textContent = item["createdBy"];
-                $(row).append(createdByCell);
-
-                // Create cells for each landscape
-                //columnHeaders.slice(3).forEach(function(landscape) {
-                var numberOfTogglesPerLandscape = 0;
-                $.each(value, function(key,togglevalue) {
-
-                  xValues.add(togglevalue["landscape"]);
-
-                  var landscapeCell = document.createElement("td");
-                  text = togglevalue["enabled"] === false ? "Disabled" : "Enabled";
-
-                  if(togglevalue["locked"] === "true"){
-                      $(landscapeCell).html(text + '<i class="fa-solid fa-lock" style="color: #cc0000;"></i>')
-                  }else{
-                      $(landscapeCell).html(text + '<i class="fa-solid fa-unlock" style="color: #249b03;"></i>')
-                  }
-                  $(row).append(landscapeCell);
-                  //numberOfTogglesPerLandscape = 0;
-                });
-
-                $("table tbody").append(row);
-              });
-
-              $.each(groupByLandscape, function(key,value) {
-                console.info(key)
-                yValues.push(value.length)
-              });
-
-              console.log(xValues);
-              console.log(yValues);
-
-              const landscapesTogglesCounterBarChart = new Chart("landscapesTogglesCounterBarChart", {
-                  type: "bar",
-                  data: {
-                    labels: Array.from(xValues),
-                    datasets:[{
-                      label: '# of Feature Toggles',
-                      backgroundColor: barColors,
-                      data: yValues,
-                      borderWidth: 1
-                    }]
-                  },
-                    options: {
-                      scale: {
-                          ticks: {
-                            precision: 0
-                          }
+                        if(togglevalue["locked"] === "true"){
+                            $(landscapeCell).append('  <i class="fa-solid fa-lock" style="color: #cc0000;"></i>')
+                        }else{
+                            $(landscapeCell).append('  <i class="fa-solid fa-unlock" style="color: #249b03;"></i>')
                         }
-                    }
-                });
-            });
+
+                        rowArr.push($(landscapeCell).html())
+                      });
+
+                      console.log(rowArr)
+                      table.row
+                          .add(rowArr)
+                          .draw(false);
+
+                    });
+
+                    $.each(groupByLandscape, function(key,value) {
+                      console.info(key)
+                      yValues.push(value.length)
+                    });
+
+                    console.log(xValues);
+                    console.log(yValues);
+
+                    const landscapesTogglesCounterBarChart = new Chart("landscapesTogglesCounterBarChart", {
+                        type: "bar",
+                        data: {
+                          labels: Array.from(xValues),
+                          datasets:[{
+                            label: '# of Feature Toggles',
+                            backgroundColor: barColors,
+                            data: yValues,
+                            borderWidth: 1
+                          }]
+                        },
+                          options: {
+                            scale: {
+                                ticks: {
+                                  precision: 0
+                                }
+                              }
+                          }
+                      });
+                  });
 
       </script>
 
    </head>
    <body>
-
-      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-
-      <h1>Feature Toggle Configurations Status (fetched at: 23/08/2023 12:23)</h1>
+      <br>
       <canvas id="landscapesTogglesCounterBarChart" style="width:100%;max-width:700px;height:100px"></canvas>
-
-            <table id="table" class="display" style="width:100%">
+      <br>
+      <br>
+            <table id="table" class="table table-striped table-bordered" style="width:100%">
             	<thead>
+                  <th>Name</th>
+                  <th>Component Name</th>
+                  <th>Created By</th>
+                  <th>Creation Date</th>
+                  <th>Staging</th>
+                  <th>Perf</th>
+                  <th>Integrate</th>
+                  <th>Canary</th>
+                  <th>Hotfix</th>
+                  <th>Live</th>
             	</thead>
             	<tbody>
             	</tbody>
