@@ -56,7 +56,6 @@
                       return group;
                     }, {});
 
-
                     const groupByLockState = data["feature-toggles"].reduce((group, item) => {
                     const { locked } = item;
                       group[locked] = group[locked] ?? [];
@@ -64,7 +63,7 @@
                       return group;
                     }, {});
 
-                    console.info(groupByLockState)
+                    //console.info(groupByLockState)
 
 
                     var count = 0;
@@ -96,6 +95,7 @@
                       var numberOfTogglesPerLandscape = 0;
                       $.each(value, function(key,togglevalue) {
                         //console.info(togglevalue["landscape"])
+                        // landscapesTogglesCounterBarChart x axis
                         xValues.add(togglevalue["landscape"]);
 
                         var landscapeCell = document.createElement("td");
@@ -117,10 +117,34 @@
 
                     });
 
+
+                    var togglesStatusPerlandscapeCounterStackedBarChartData = [];
+
+
                     $.each(groupByLandscape, function(key,value) {
                       //console.info(key)
+                      // landscapesTogglesCounterBarChart y axis
                       yValues.push(value.length)
+
+                      // togglesStatusPerlandscapeCounterStackedBarChart data
+                      var dataSetObject = new Object();
+                      let landscapeEnabledToggles = value.filter(function(el){
+                            return (el["enabled"] == true);
+                      });
+
+
+                      let landscapeDisabledToggles = value.filter(function(el){
+                            return (el["enabled"] == false);
+                      });
+
+                      dataSetObject.x = key;
+                      dataSetObject.enabled = landscapeEnabledToggles.length;
+                      dataSetObject.disabled = landscapeDisabledToggles.length;
+                      togglesStatusPerlandscapeCounterStackedBarChartData.push(dataSetObject)
+
                     });
+
+
 
                     //console.log(xValues);
                     //console.log(yValues);
@@ -130,8 +154,7 @@
                         data: {
                           labels: Array.from(xValues),
                           datasets:[{
-                            label: '# of Feature Toggles',
-                            //backgroundColor: barColors,
+                            label:'Landscapes Toggles',
                             backgroundColor: [
                               'rgba(255, 99, 132, 0.2)',
                               'rgba(255, 159, 64, 0.2)',
@@ -146,6 +169,12 @@
                         },
                           options: {
                             //indexAxis: 'y',
+                            plugins: {
+                              title: {
+                                display: true,
+                                text: 'Toggles Count Per Landscape'
+                              },
+                            },
                             scale: {
                                 ticks: {
                                   precision: 0
@@ -175,7 +204,58 @@
                       const lockedCounterBarChart = new Chart("lockedCounterBarChart", {
                           type: "doughnut",
                           data: doughnutdata,
+                            options: {
+                              //indexAxis: 'y',
+                              plugins: {
+                                title: {
+                                  display: true,
+                                  text: 'Locked / Unlocked Toggles Count'
+                                },
+                              }
+                            }
                         });
+
+
+                        const stackedLabels = Object.keys(groupByLandscape);
+
+                        const togglesStatusPerlandscapeCounterStackedBarChart = new Chart("togglesStatusPerlandscapeCounterStackedBarChart", {
+                            type: "bar",
+                            data: {
+                              labels: stackedLabels,
+                              datasets: [{
+                                label: 'Enabled',
+                                backgroundColor: ['rgb(34, 139, 34)'],
+                                data: togglesStatusPerlandscapeCounterStackedBarChartData,
+                                parsing: {
+                                  yAxisKey: 'enabled'
+                                }
+                              }, {
+                                label: 'Disabled',
+                                backgroundColor: ['rgb(199, 0, 57)'],
+                                data: togglesStatusPerlandscapeCounterStackedBarChartData,
+                                parsing: {
+                                  yAxisKey: 'disabled'
+                                }
+                              }]
+                            },
+                            options: {
+                              plugins: {
+                                title: {
+                                  display: true,
+                                  text: 'Toggles Status Per Landscape Counter'
+                                },
+                              },
+                              //responsive: true,
+                              scales: {
+                                x: {
+                                  stacked: true,
+                                },
+                                y: {
+                                  stacked: true
+                                }
+                              }
+                            }
+                          });
 
 
                   });
@@ -184,14 +264,14 @@
 
    </head>
    <body>
-      <br>
-      <div style="display:flex;gap: 10px 20px;width:100%;height:350px">
+   <div id="main-container" style="display:flex;flex-direction: column;row-gap: 10px;margin: 20px,width:100%">
+      <div id="charts-container" style="display:flex;column-gap: 20px;height:350px;max-height:350px;">
         <canvas id="landscapesTogglesCounterBarChart"></canvas>
         <canvas id="lockedCounterBarChart"></canvas>
+        <canvas id="togglesStatusPerlandscapeCounterStackedBarChart"></canvas>
       </div>
-      <br>
-      <br>
-            <table id="table" class="table table-striped table-bordered" style="width:100%">
+      <div id="table-container">
+            <table id="table" class="table table-striped table-bordered">
             	<thead>
                   <th>Name</th>
                   <th>Component Name</th>
@@ -207,5 +287,7 @@
             	<tbody>
             	</tbody>
             </table>
+      </div>
+    <div>
    </body>
 </html>
