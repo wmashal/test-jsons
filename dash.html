@@ -261,11 +261,27 @@
                   });
 
       </script>
+      <style>
+        .mainContainer{
+          display:flex;
+          flex-direction: column;
+          row-gap: 10px;
+          margin: 20px;
+          width:100%
+        }
 
+        .chartsContainer{
+          display:flex;
+          column-gap: 20px;
+          height:350px;
+          max-height:350px;
+        }
+
+      </style>
    </head>
    <body>
-   <div id="main-container" style="display:flex;flex-direction: column;row-gap: 10px;margin: 20px,width:100%">
-      <div id="charts-container" style="display:flex;column-gap: 20px;height:350px;max-height:350px;">
+   <div class="mainContainer">
+      <div class="chartsContainer">
         <canvas id="landscapesTogglesCounterBarChart"></canvas>
         <canvas id="lockedCounterBarChart"></canvas>
         <canvas id="togglesStatusPerlandscapeCounterStackedBarChart"></canvas>
