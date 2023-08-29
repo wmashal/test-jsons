@@ -5,14 +5,14 @@
 
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-
+      <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
 
       <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
       <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
       <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
       <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
-
+      <script type="text/javascript" language="javascript" src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" data-auto-replace-svg="nest" data-observe-insertions="true"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -25,8 +25,10 @@
                   var barColors = ["green"]
                   var table;
 
-                  $(document).ready(function() {
-
+                  $( function() {
+                    $(document).tooltip({
+                         track: true
+                     });
                         table = $('#table').DataTable( {
                                     select: true,
                                     "columnDefs": [
@@ -89,9 +91,14 @@
                       rowArr.push($(createdByCell).html())
 
                       var creationTimestamp = document.createElement("td");
-                      creationTimestamp.textContent = item["creationTimestamp"];
+                      formatedcreationTimestamp = moment(item["creationTimestamp"]).format("YYYY-MM-DD");
+                      creationTimestamp.textContent = formatedcreationTimestamp;
                       rowArr.push($(creationTimestamp).html())
 
+                      var dateModifiedTimestamp = document.createElement("td");
+                      formateddateModifiedTimestamp = moment(item["modefiedTimestamp"]).format("YYYY-MM-DD");
+                      dateModifiedTimestamp.textContent = formateddateModifiedTimestamp;
+                      rowArr.push($(dateModifiedTimestamp).html())
 
                       // Create cells for each landscape
                       var numberOfTogglesPerLandscape = 0;
@@ -104,7 +111,13 @@
                         state = togglevalue["enabled"] === false ? $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #bd0000;"></i>') : $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #3b9c07;"></i>');
 
                         if(togglevalue["locked"] === "true"){
-                            $(landscapeCell).append(' <i class="fa-solid fa-lock" style="color: #cc0000;"></i>')
+
+                          let lockingDuration = "";
+                          if(togglevalue["lastLockTimestamp"].length > 0){
+                             lockingDuration = calculateTimeDifference(moment(togglevalue["lastLockTimestamp"]));
+                          }
+                          $(landscapeCell).append(' <i class="fa-solid fa-lock" style="color: #cc0000;" title="'+lockingDuration+'"></i>')
+
                         }else{
                             $(landscapeCell).append(' <i class="fa-solid fa-unlock" style="color: #249b03;"></i>')
                         }
@@ -145,8 +158,6 @@
                       togglesStatusPerlandscapeCounterStackedBarChartData.push(dataSetObject)
 
                     });
-
-
 
                     //console.log(xValues);
                     //console.log(yValues);
@@ -262,6 +273,16 @@
 
                   });
 
+                  function calculateTimeDifference(lockDate) {
+                     var now = moment();
+                     var duration = moment.duration(now.diff(lockDate));
+                     var days = Math.floor(duration.asDays());
+                     var hours = Math.floor(duration.asHours() % 24);
+
+                     var timeDiff = "Locking duration is " + days + " days and " + hours + " hours";
+                     return timeDiff;
+                   }
+
       </script>
       <style>
         .mainContainer{
@@ -283,6 +304,7 @@
         .tableContainer{
           margin: 40px;
         }
+
       </style>
    </head>
    <body>
@@ -299,6 +321,7 @@
                   <th>Component Name</th>
                   <th>Created By</th>
                   <th>Creation Date</th>
+                  <th>Date Modified</th>
                   <th>Staging</th>
                   <th>Perf</th>
                   <th>Integrate</th>
