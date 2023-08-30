@@ -24,6 +24,7 @@
                   var yValues = [];
                   var barColors = ["green"]
                   var table;
+                  var diffMap = new Map();
 
                   $( function() {
                     $(document).tooltip({
@@ -128,6 +129,7 @@
                         rowArr.push($(landscapeCell).html())
                       });
 
+
                       //console.log(rowArr)
                       table.row
                           .add(rowArr)
@@ -165,6 +167,7 @@
                     //console.log(xValues);
                     //console.log(yValues);
 
+                    /**
                     const landscapesTogglesCounterBarChart = new Chart("landscapesTogglesCounterBarChart", {
                         type: "bar",
                         data: {
@@ -198,7 +201,7 @@
                               }
                           }
                       });
-
+                      **/
 
 
                       const doughnutdata = {
@@ -275,6 +278,8 @@
 
 
                   });
+
+                  console.info(diffMap)
 
                   function calculateTimeDifference(lockDate) {
                      var now = moment();
