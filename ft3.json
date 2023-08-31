@@ -246,7 +246,7 @@
 				"namespace": "feature-toggle",
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-08-10T05:32:06Z",
-				"enabled": true,
+				"enabled": false,
         			"landscape": "hotfix",
 				"componentName":"resources-server",
 				"createdBy":"Yulia Kolesnikov",	
