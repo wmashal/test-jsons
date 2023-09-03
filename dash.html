@@ -22,16 +22,15 @@
 
                   var xValues = new Set();;
                   var yValues = [];
-                  var barColors = ["green"]
                   var table;
-                  var diffMap = new Map();
-
+                  var lowHighLandscapesDiffTable;
+                  $(".lowHighLandscapesTableContainer").hide();
                   $( function() {
                     $(document).tooltip({
                          autoClose: false,
                          tooltipClass: "GFG",
                          position: {
-                            my: "left+15 center",
+                            my: "right top",
                             at: "right center"
                          }
                      });
@@ -44,13 +43,32 @@
                                         { "width": "200px", "targets": 3 },
                                       ],
                                       pagingType: 'full_numbers'
+
                                 } );
+
+                      lowHighLandscapesDiffTable = $('#lowHighLandscapesTable').DataTable( {
+                                  "columnDefs": [
+                                      { "width": "180px", "targets": 0 },
+                                      { "width": "180px", "targets": 1 },
+                                      { "width": "50px", "targets": 2 },
+                                      { "width": "50px", "targets": 3 },
+                                      { "width": "50px", "targets": 4 },
+                                      { "width": "50px", "targets": 5 },
+                                    ],
+                                    paging: false,
+                                    "bInfo": false,
+                                    ordering: false,
+                                    searching: false
+                              } );
 
                    });
 
                   $.get("https://wmashal.github.io/test-jsons/ft3.json", function(data) {
-                    //console.log(data);
 
+                      let lowHighLandscapeDiff =  getLowHighLandscapesDiff(data);
+                      buildLowHighLandscapesDiffTable(lowHighLandscapeDiff);
+
+                    //console.log(data);
                     const groupByToggleName = data["feature-toggles"].reduce((group, item) => {
                     const { name } = item;
                       group[name] = group[name] ?? [];
@@ -77,10 +95,14 @@
 
 
                     var count = 0;
+                    var landscapeTogglesDiffrences = new Map();
+                    var liveHotfixDiffrentToggles = [];
+                    var IntCanaryDiffrentToggles = [];
+
                     $.each(groupByToggleName, function(key,value) {
 
                       var item = value[count++];
-                      var row = document.createElement("tr");
+                      //var row = document.createElement("tr");
                       var rowArr = [];
 
                       var nameCell = document.createElement("td");
@@ -106,15 +128,18 @@
                       dateModifiedTimestamp.textContent = formateddateModifiedTimestamp;
                       rowArr.push($(dateModifiedTimestamp).html())
 
+
                       // Create cells for each landscape
-                      var numberOfTogglesPerLandscape = 0;
+                      //var numberOfTogglesPerLandscape = 0;
                       $.each(value, function(key,togglevalue) {
                         //console.info(togglevalue["landscape"])
                         // landscapesTogglesCounterBarChart x axis
                         xValues.add(togglevalue["landscape"]);
 
-                        var landscapeCell = document.createElement("td");
-                        state = togglevalue["enabled"] === false ? $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #bd0000;"></i>') : $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #3b9c07;"></i>');
+                        const strObj=Object.entries(togglevalue["strategy"]).reduce( (str, entry,i) => `${str}${i>0?'&':''}${entry[1]}`, "")
+                        let landscapeTooltip = "Additional Info: \n Name: "+togglevalue["name"] +" \n Landscape: "+togglevalue["landscape"] + " \n Version: "+togglevalue["version"] + " \n Created: "+togglevalue["creationTimestamp"] + " \n Strategies : "+strObj;
+                        let landscapeCell = document.createElement("td");
+                        togglevalue["enabled"] === false ? $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #bd0000;"></i>') : $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #3b9c07;"></i>');
 
                         if(togglevalue["locked"] === "true"){
 
@@ -127,81 +152,144 @@
                         }
 
                         rowArr.push($(landscapeCell).html())
+                        $(".fa-toggle-on").attr("title",landscapeTooltip)
+
                       });
 
 
                       //console.log(rowArr)
                       table.row
                           .add(rowArr)
-                          .draw(false);
+                          .draw(true);
 
                     });
 
 
-                    var togglesStatusPerlandscapeCounterStackedBarChartData = [];
+                  function getLowHighLandscapesDiff(data){
+
+                    var diffTogglesArr = [];
+
+                    const liveToggles = data['feature-toggles'].filter(toggle => toggle.landscape === 'live');
+                    const hotfixToggles = data['feature-toggles'].filter(toggle => toggle.landscape === 'hotfix');
+
+                    const intToggles = data['feature-toggles'].filter(toggle => toggle.landscape === 'Int');
+                    const canaryToggles = data['feature-toggles'].filter(toggle => toggle.landscape === 'canary');
+
+                    for (let liveToggle of liveToggles) {
+                      const matchingHotfixToggle = hotfixToggles.find(toggle => toggle.name === liveToggle.name);
+                      if (matchingHotfixToggle && !matchingHotfixToggle.enabled && liveToggle.enabled) {
+                          diffTogglesArr.push(liveToggle);
+                          diffTogglesArr.push(matchingHotfixToggle);
+                      }
+                    }
+
+                    for (let canaryToggle of canaryToggles) {
+                      const matchingIntToggle = intToggles.find(toggle => toggle.name === canaryToggle.name);
+                      if (matchingIntToggle && !matchingIntToggle.enabled && canaryToggle.enabled) {
+                          diffTogglesArr.push(canaryToggle);
+                          diffTogglesArr.push(matchingIntToggle);
+                      }
+                    }
+
+                    console.log(diffTogglesArr);
+
+                    return diffTogglesArr;
+
+                  }
 
 
-                    $.each(groupByLandscape, function(key,value) {
-                      //console.info(key)
-                      // landscapesTogglesCounterBarChart y axis
-                      yValues.push(value.length)
+                  function buildLowHighLandscapesDiffTable(lowHighLandscapeDiff){
 
-                      // togglesStatusPerlandscapeCounterStackedBarChart data
-                      var dataSetObject = new Object();
-                      let landscapeEnabledToggles = value.filter(function(el){
-                            return (el["enabled"] == true);
+                      if(lowHighLandscapeDiff){
+
+                          $(".lowHighLandscapesTableContainer").show();
+                          const groupByToggleName = lowHighLandscapeDiff.reduce((group, item) => {
+                              const { name } = item;
+                              group[name] = group[name] ?? [];
+                              group[name].push(item);
+                              return group;
+                          }, {});
+
+                          let count = 0;
+
+
+
+                          let landscapesCount = 2;
+                          $.each(groupByToggleName, function(key,value) {
+
+                              let diffRow = createDiffRow();
+
+                              let item = value[count++];
+                              let diffNameCell = diffRow.children[0] //document.createElement("td");
+                              diffNameCell.textContent = key;
+
+                              let diffComponentNameCell = diffRow.children[1]//document.createElement("td");
+                              diffComponentNameCell.textContent = item["componentName"];
+
+                              $.each(value, function(key,togglevalue) {
+                                  let landscapeCell = diffRow.children[landscapesCount++] //document.createElement("td");
+                                  togglevalue["enabled"] === false ? $(landscapeCell).html('<i class="fa-solid fa-toggle-on" style="color: #bd0000;"></i>')
+                                      : $(landscapeCell).html('<i class="fa-solid fa-toggle-on" style="color: #3b9c07;"></i>');
+
+                              });
+
+                              lowHighLandscapesDiffTable.row
+                                  .add(diffRow)
+                                  .draw(false);
+                          });
+                      }
+
+                  }
+
+                  function createDiffRow(){
+                      let diffRow = document.createElement("tr");
+                      let td = document.createElement("td");
+                      td.textContent = 'NA';
+                      let td1 = document.createElement("td");
+                      td1.textContent = 'NA';
+                      let td2 = document.createElement("td");
+                      td2.textContent = 'NA';
+                      let td3 = document.createElement("td");
+                      td3.textContent = 'NA';
+                      let td4 = document.createElement("td");
+                      td4.textContent = 'NA';
+                      let td5 = document.createElement("td");
+                      td5.textContent = 'NA';
+                      diffRow.append(td)
+                      diffRow.append(td1)
+                      diffRow.append(td2)
+                      diffRow.append(td3)
+                      diffRow.append(td4)
+                      diffRow.append(td5)
+
+                      return diffRow;
+                  }
+
+                      var togglesStatusPerlandscapeCounterStackedBarChartData = [];
+
+                      $.each(groupByLandscape, function(key,value) {
+
+                          //console.info(key)
+                          // landscapesTogglesCounterBarChart y axis
+                          yValues.push(value.length)
+
+                          // togglesStatusPerlandscapeCounterStackedBarChart data
+                          var dataSetObject = new Object();
+                          let landscapeEnabledToggles = value.filter(function(el){
+                              return (el["enabled"] == true);
+                          });
+
+
+                          let landscapeDisabledToggles = value.filter(function(el){
+                              return (el["enabled"] == false);
+                          });
+
+                          dataSetObject.x = key;
+                          dataSetObject.enabled = landscapeEnabledToggles.length;
+                          dataSetObject.disabled = landscapeDisabledToggles.length;
+                          togglesStatusPerlandscapeCounterStackedBarChartData.push(dataSetObject)
+
                       });
-
-
-                      let landscapeDisabledToggles = value.filter(function(el){
-                            return (el["enabled"] == false);
-                      });
-
-                      dataSetObject.x = key;
-                      dataSetObject.enabled = landscapeEnabledToggles.length;
-                      dataSetObject.disabled = landscapeDisabledToggles.length;
-                      togglesStatusPerlandscapeCounterStackedBarChartData.push(dataSetObject)
-
-                    });
-
-                    //console.log(xValues);
-                    //console.log(yValues);
-
-                    /**
-                    const landscapesTogglesCounterBarChart = new Chart("landscapesTogglesCounterBarChart", {
-                        type: "bar",
-                        data: {
-                          labels: Array.from(xValues),
-                          datasets:[{
-                            label:'Landscapes Toggles',
-                            backgroundColor: [
-                              'rgba(255, 99, 132, 0.2)',
-                              'rgba(255, 159, 64, 0.2)',
-                              'rgba(255, 205, 86, 0.2)',
-                              'rgba(75, 192, 192, 0.2)',
-                              'rgba(54, 162, 235, 0.2)',
-                              'rgba(153, 102, 255, 0.2)',
-                            ],
-                            data: yValues,
-                            borderWidth: 1
-                          }]
-                        },
-                          options: {
-                            //indexAxis: 'y',
-                            plugins: {
-                              title: {
-                                display: true,
-                                text: 'Toggles Count Per Landscape'
-                              },
-                            },
-                            scale: {
-                                ticks: {
-                                  precision: 0
-                                }
-                              }
-                          }
-                      });
-                      **/
 
 
                       const doughnutdata = {
@@ -279,8 +367,6 @@
 
                   });
 
-                  console.info(diffMap)
-
                   function calculateTimeDifference(lockDate) {
                      var now = moment();
                      var duration = moment.duration(now.diff(lockDate));
@@ -303,7 +389,7 @@
 
         .chartsContainer{
           display:flex;
-          column-gap: 20px;
+          column-gap: 60px;
           height:350px;
           max-height:350px;
           margin: 40px;
@@ -313,10 +399,11 @@
           margin: 40px;
         }
 
-        .GFG {
+        .GFG{
             color: black;
             background: #FFF700;
             padding: 5px 10px;
+            white-space: pre-line;
         }
 
       </style>
@@ -324,7 +411,25 @@
    <body>
    <div class="mainContainer">
       <div class="chartsContainer">
-        <canvas id="landscapesTogglesCounterBarChart"></canvas>
+        <!-- <canvas id="landscapesTogglesCounterBarChart"></canvas> -->
+          <div class="lowHighLandscapesTableContainer">
+              <div class="alert alert-danger" role="alert">
+                  Disparities in toggle states between low and high landscapes
+              </div>
+              <table id="lowHighLandscapesTable" class="table table-striped table-bordered">
+                  <thead>
+                    <th>Name</th>
+                    <th>Component Name</th>
+                    <th>Live</th>
+                    <th>Hotfix</th>
+                    <th>Canary</th>
+                    <th>Integrate</th>
+                  </thead>
+                  <tbody>
+                  </tbody>
+              </table>
+          </div>
+
         <canvas id="lockedCounterBarChart"></canvas>
         <canvas id="togglesStatusPerlandscapeCounterStackedBarChart"></canvas>
       </div>
