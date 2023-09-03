@@ -127,7 +127,7 @@
 				"namespace": "feature-toggle",
 				"creationTimestamp": "2023-07-02T05:32:06Z",
 				"modefiedTimestamp": "2023-07-02T05:32:06Z",
-				"enabled": true,
+				"enabled": false,
         			"landscape": "Int",
 				"componentName":"commercial-integration-manager",
 				"createdBy":"Gilad Keinan",
