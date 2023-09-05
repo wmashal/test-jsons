@@ -43,7 +43,7 @@
         			"landscape": "staging",
 				"componentName":"resources-server",
 				"createdBy":"Yulia Kolesnikov",	
-				"locked":"true",
+				"locked":"false",
 	      			"lastLockTimestamp": "2023-07-02T05:32:06Z",
 				"BLI":"",
 				"version": 0,
