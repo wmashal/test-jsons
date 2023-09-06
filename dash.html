@@ -63,7 +63,7 @@
 
                    });
 
-                  $.get("https://wmashal.github.io/test-jsons/ft3.json", function(data) {
+                  $.get("https://wmashal.github.io/test-jsons/ft4.json", function(data) {
 
                       let lowHighLandscapeDiff =  getLowHighLandscapesDiff(data);
                       buildLowHighLandscapesDiffTable(lowHighLandscapeDiff);
@@ -153,7 +153,7 @@
                                   const stratigiesObj = Object.entries(togglevalue["strategy"]).reduce((str, entry, i) => `${str}${i > 0 ? '&' : ''}${entry[1]}`, "")
                                   let landscapeTooltip = "Additional Info: \n Name: " + togglevalue["name"] + " \n Landscape: " + togglevalue["landscape"] + " \n Version: " + togglevalue["version"] + " \n Created: " + moment(togglevalue["creationTimestamp"]).format("YYYY-MM-DD") + " \n Strategies : " + stratigiesObj;
                                   $($(landscapeCell).children()[0]).attr("title", landscapeTooltip)
-                                  
+
                                   rowArr.push($(landscapeCell).html())
                               }
 
@@ -344,7 +344,8 @@
 
                       });
 
-
+                      lockedCount = groupByLockState[true] ? groupByLockState[true].length : 0
+                      unlockedCount = groupByLockState[false] ? groupByLockState[false].length : 0
                       const doughnutdata = {
                           labels: [
                             'Locked',
@@ -352,7 +353,7 @@
                           ],
                           datasets: [{
                             label: 'Locked Toggles Count',
-                            data: [groupByLockState[true].length,groupByLockState[false].length],
+                            data: [lockedCount,unlockedCount],
                             backgroundColor: [
                               'rgb(255, 99, 132)',
                               'rgb(34, 139, 34)',
