@@ -63,7 +63,7 @@
 
                    });
 
-                  $.get("https://wmashal.github.io/test-jsons/ft4.json", function(data) {
+                  $.get("https://wmashal.github.io/test-jsons/ft3.json", function(data) {
 
                       let lowHighLandscapeDiff =  getLowHighLandscapesDiff(data);
                       buildLowHighLandscapesDiffTable(lowHighLandscapeDiff);
@@ -94,65 +94,70 @@
                     //console.info(groupByLockState)
 
 
-                    var count = 0;
+                   // var count = 0;
                     var landscapeTogglesDiffrences = new Map();
                     var liveHotfixDiffrentToggles = [];
                     var IntCanaryDiffrentToggles = [];
 
                     $.each(groupByToggleName, function(key,value) {
 
-                      var item = value[count++];
-                      //var row = document.createElement("tr");
-                      var rowArr = [];
+                      let toggleRow = createToggleRow();
+                      for (let item of value) {
+                          var rowArr = [];
 
-                      var nameCell = document.createElement("td");
-                      nameCell.textContent = key;
-                      rowArr.push($(nameCell).html())
+                          var nameCell = toggleRow.children[0];
+                          nameCell.textContent = key;
+                          rowArr.push($(nameCell).html())
 
-                      var componentNameCell = document.createElement("td");
-                      componentNameCell.textContent = item["componentName"];
-                      rowArr.push($(componentNameCell).html())
+                          var componentNameCell = toggleRow.children[1];
+                          componentNameCell.textContent = item["componentName"];
+                          rowArr.push($(componentNameCell).html())
 
 
-                      var createdByCell = document.createElement("td");
-                      createdByCell.textContent = item["createdBy"];
-                      rowArr.push($(createdByCell).html())
+                          var createdByCell = toggleRow.children[2];
+                          createdByCell.textContent = item["createdBy"];
+                          rowArr.push($(createdByCell).html())
 
-                      var creationTimestamp = document.createElement("td");
-                      formatedcreationTimestamp = moment(item["creationTimestamp"]).format("YYYY-MM-DD");
-                      creationTimestamp.textContent = formatedcreationTimestamp;
-                      rowArr.push($(creationTimestamp).html())
+                          var creationTimestamp = toggleRow.children[3];
+                          formatedcreationTimestamp = moment(item["creationTimestamp"]).format("YYYY-MM-DD");
+                          creationTimestamp.textContent = formatedcreationTimestamp;
+                          rowArr.push($(creationTimestamp).html())
 
-                      var dateModifiedTimestamp = document.createElement("td");
-                      formateddateModifiedTimestamp = moment(item["modefiedTimestamp"]).format("YYYY-MM-DD");
-                      dateModifiedTimestamp.textContent = formateddateModifiedTimestamp;
-                      rowArr.push($(dateModifiedTimestamp).html())
-
+                          var dateModifiedTimestamp = toggleRow.children[4];
+                          formateddateModifiedTimestamp = moment(item["modefiedTimestamp"]).format("YYYY-MM-DD");
+                          dateModifiedTimestamp.textContent = formateddateModifiedTimestamp;
+                          rowArr.push($(dateModifiedTimestamp).html())
+                      }
 
                       // Create cells for each landscape
                       //var numberOfTogglesPerLandscape = 0;
                       $.each(value, function(key,togglevalue) {
-                        //console.info(togglevalue["landscape"])
-                        // landscapesTogglesCounterBarChart x axis
-                        xValues.add(togglevalue["landscape"]);
+                          $.each(toggleRow.children, function (key, landscapeCell) {
 
-                        const strObj=Object.entries(togglevalue["strategy"]).reduce( (str, entry,i) => `${str}${i>0?'&':''}${entry[1]}`, "")
-                        let landscapeTooltip = "Additional Info: \n Name: "+togglevalue["name"] +" \n Landscape: "+togglevalue["landscape"] + " \n Version: "+togglevalue["version"] + " \n Created: "+ moment(item["creationTimestamp"]).format("YYYY-MM-DD") + " \n Strategies : "+strObj;
-                        let landscapeCell = document.createElement("td");
-                        togglevalue["enabled"] === false ? $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #bd0000;"></i>') : $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #3b9c07;"></i>');
+                              if (togglevalue["landscape"] === landscapeCell.id) {
 
-                        if(togglevalue["locked"] === "true"){
+                                  xValues.add(togglevalue["landscape"]);
 
-                          let lockingDuration = "";
-                          if(togglevalue["lastLockTimestamp"].length > 0){
-                             lockingDuration = calculateTimeDifference(moment(togglevalue["lastLockTimestamp"]));
-                          }
-                          $(landscapeCell).append(' <i class="fa-solid fa-lock" style="color: #cc0000;" title="'+lockingDuration+'"></i>')
+                                  togglevalue["enabled"] === false ? $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #bd0000;"></i>') : $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #3b9c07;"></i>');
 
-                        }
+                                  if (togglevalue["locked"] === "true") {
 
-                        rowArr.push($(landscapeCell).html())
-                        $(".fa-toggle-on").attr("title",landscapeTooltip)
+                                      let lockingDuration = "";
+                                      if (togglevalue["lastLockTimestamp"].length > 0) {
+                                          lockingDuration = calculateTimeDifference(moment(togglevalue["lastLockTimestamp"]));
+                                      }
+                                      $(landscapeCell).append(' <i class="fa-solid fa-lock" style="color: #cc0000;" title="' + lockingDuration + '"></i>')
+
+                                  }
+
+                                  const stratigiesObj = Object.entries(togglevalue["strategy"]).reduce((str, entry, i) => `${str}${i > 0 ? '&' : ''}${entry[1]}`, "")
+                                  let landscapeTooltip = "Additional Info: \n Name: " + togglevalue["name"] + " \n Landscape: " + togglevalue["landscape"] + " \n Version: " + togglevalue["version"] + " \n Created: " + moment(togglevalue["creationTimestamp"]).format("YYYY-MM-DD") + " \n Strategies : " + stratigiesObj;
+                                  $($(landscapeCell).children()[0]).attr("title", landscapeTooltip)
+                                  
+                                  rowArr.push($(landscapeCell).html())
+                              }
+
+                          });
 
                       });
 
@@ -269,6 +274,49 @@
 
                       return diffRow;
                   }
+
+                      function createToggleRow(){
+                          let toggleRow = document.createElement("tr");
+
+                          let nameTd = document.createElement("td");
+                          let componentNameTd = document.createElement("td");
+                          let createdByTd = document.createElement("td");
+                          let creationDateTd = document.createElement("td");
+                          let modifyDateTd = document.createElement("td");
+
+                          let stagingTd = document.createElement("td");
+                          stagingTd.id = 'staging';
+
+                          let perfTd = document.createElement("td");
+                          perfTd.id = 'perf';
+
+                          let liveTd = document.createElement("td");
+                          liveTd.id="live"
+
+                          let hotfixTd = document.createElement("td");
+                          hotfixTd.id="hotfix"
+
+                          let canaryTd = document.createElement("td");
+                          canaryTd.id='canary'
+
+                          let intTd = document.createElement("td");
+                          intTd.id = 'int'
+
+                          toggleRow.append(nameTd)
+                          toggleRow.append(componentNameTd)
+                          toggleRow.append(createdByTd)
+                          toggleRow.append(creationDateTd)
+                          toggleRow.append(modifyDateTd)
+
+                          toggleRow.append(stagingTd)
+                          toggleRow.append(perfTd)
+                          toggleRow.append(intTd)
+                          toggleRow.append(canaryTd)
+                          toggleRow.append(hotfixTd)
+                          toggleRow.append(liveTd)
+
+                          return toggleRow;
+                      }
 
                       var togglesStatusPerlandscapeCounterStackedBarChartData = [];
 
