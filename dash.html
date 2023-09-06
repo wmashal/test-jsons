@@ -63,7 +63,7 @@
 
                    });
 
-                  $.get("https://wmashal.github.io/test-jsons/ft3.json", function(data) {
+                  $.get("https://github.tools.sap/atom-cfs/feature-toggle-extension/blob/migrationDashboard/resources/featureToggleMetaData.json", function(data) {
 
                       let lowHighLandscapeDiff =  getLowHighLandscapesDiff(data);
                       buildLowHighLandscapesDiffTable(lowHighLandscapeDiff);
@@ -137,7 +137,7 @@
                         xValues.add(togglevalue["landscape"]);
 
                         const strObj=Object.entries(togglevalue["strategy"]).reduce( (str, entry,i) => `${str}${i>0?'&':''}${entry[1]}`, "")
-                        let landscapeTooltip = "Additional Info: \n Name: "+togglevalue["name"] +" \n Landscape: "+togglevalue["landscape"] + " \n Version: "+togglevalue["version"] + " \n Created: "+moment(item["creationTimestamp"]).format("YYYY-MM-DD")+ " \n Strategies : "+strObj;
+                        let landscapeTooltip = "Additional Info: \n Name: "+togglevalue["name"] +" \n Landscape: "+togglevalue["landscape"] + " \n Version: "+togglevalue["version"] + " \n Created: "+ moment(item["creationTimestamp"]).format("YYYY-MM-DD") + " \n Strategies : "+strObj;
                         let landscapeCell = document.createElement("td");
                         togglevalue["enabled"] === false ? $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #bd0000;"></i>') : $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #3b9c07;"></i>');
 
