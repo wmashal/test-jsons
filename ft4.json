@@ -1,0 +1,2289 @@
+{
+  "feature-toggles": [
+    {
+      "name": "cc-limit-user-bindings",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "02-07-2023 05:51",
+      "modifiedTimestamp": "02-07-2023 05:51",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "staging",
+      "componentName": "core-controllers",
+      "createdBy": "Shachar Malachi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5827",
+      "version": 6,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "cc-limit-user-bindings",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "02-07-2023 05:51",
+      "modifiedTimestamp": "02-07-2023 05:51",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "int",
+      "componentName": "core-controllers",
+      "createdBy": "Shachar Malachi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5827",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "cc-limit-user-bindings",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "02-07-2023 05:51",
+      "modifiedTimestamp": "02-07-2023 05:51",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "canary",
+      "componentName": "core-controllers",
+      "createdBy": "Shachar Malachi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5827",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "cc-limit-user-bindings",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "02-07-2023 05:51",
+      "modifiedTimestamp": "02-07-2023 05:51",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "perf",
+      "componentName": "core-controllers",
+      "createdBy": "Shachar Malachi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5827",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "cc-limit-user-bindings",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "02-07-2023 05:51",
+      "modifiedTimestamp": "02-07-2023 05:51",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "hotfix",
+      "componentName": "core-controllers",
+      "createdBy": "Shachar Malachi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5827",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "cc-limit-user-bindings",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "02-07-2023 05:51",
+      "modifiedTimestamp": "02-07-2023 05:51",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "core-controllers",
+      "createdBy": "Shachar Malachi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5827",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "cim-publish-to-root-governance",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "06-07-2023 05:51",
+      "modifiedTimestamp": "06-07-2023 05:51",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "staging",
+      "componentName": "commercial-integration-manager",
+      "createdBy": "Gilad Keinan",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6132",
+      "version": 6,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "cim-publish-to-root-governance",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "06-07-2023 05:51",
+      "modifiedTimestamp": "06-07-2023 05:51",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "int",
+      "componentName": "commercial-integration-manager",
+      "createdBy": "Gilad Keinan",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6132",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "cim-publish-to-root-governance",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "06-07-2023 05:51",
+      "modifiedTimestamp": "06-07-2023 05:51",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "canary",
+      "componentName": "commercial-integration-manager",
+      "createdBy": "Gilad Keinan",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6132",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "cim-publish-to-root-governance",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "06-07-2023 05:51",
+      "modifiedTimestamp": "06-07-2023 05:51",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "perf",
+      "componentName": "commercial-integration-manager",
+      "createdBy": "Gilad Keinan",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6132",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "cim-publish-to-root-governance",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "06-07-2023 05:51",
+      "modifiedTimestamp": "06-07-2023 05:51",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "hotfix",
+      "componentName": "commercial-integration-manager",
+      "createdBy": "Gilad Keinan",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6132",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "cim-publish-to-root-governance",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "06-07-2023 05:51",
+      "modifiedTimestamp": "06-07-2023 05:51",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "commercial-integration-manager",
+      "createdBy": "Gilad Keinan",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6132",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "healthcheck-test-toggle-mt",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "05-09-2023 15:12",
+      "modifiedTimestamp": "05-09-2023 15:32",
+      "deleted": false,
+      "deletedTimestamp": "dd-MM-yyyy HH:mm",
+      "enabled": false,
+      "landscape": "staging",
+      "componentName": "healthcheck",
+      "createdBy": "Mai Shani",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6381",
+      "version": 3,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "healthcheck-test-toggle-mt",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "05-09-2023 15:12",
+      "modifiedTimestamp": "05-09-2023 15:12",
+      "deleted": false,
+      "deletedTimestamp": "dd-MM-yyyy HH:mm",
+      "enabled": false,
+      "landscape": "int",
+      "componentName": "healthcheck",
+      "createdBy": "Mai Shani",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6381",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "healthcheck-test-toggle-mt",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "05-09-2023 15:12",
+      "modifiedTimestamp": "05-09-2023 15:12",
+      "deleted": false,
+      "deletedTimestamp": "dd-MM-yyyy HH:mm",
+      "enabled": false,
+      "landscape": "canary",
+      "componentName": "healthcheck",
+      "createdBy": "Mai Shani",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6381",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "healthcheck-test-toggle-mt",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "05-09-2023 15:12",
+      "modifiedTimestamp": "05-09-2023 15:12",
+      "deleted": false,
+      "deletedTimestamp": "dd-MM-yyyy HH:mm",
+      "enabled": false,
+      "landscape": "perf",
+      "componentName": "healthcheck",
+      "createdBy": "Mai Shani",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6381",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "healthcheck-test-toggle-mt",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "05-09-2023 15:12",
+      "modifiedTimestamp": "05-09-2023 15:12",
+      "deleted": false,
+      "deletedTimestamp": "dd-MM-yyyy HH:mm",
+      "enabled": false,
+      "landscape": "hotfix",
+      "componentName": "healthcheck",
+      "createdBy": "Mai Shani",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6381",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "healthcheck-test-toggle-mt",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "05-09-2023 15:12",
+      "modifiedTimestamp": "05-09-2023 15:12",
+      "deleted": false,
+      "deletedTimestamp": "dd-MM-yyyy HH:mm",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "healthcheck",
+      "createdBy": "Mai Shani",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6381",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "uca-retry-spfi",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "05-09-2023 18:38",
+      "modifiedTimestamp": "05-09-2023 18:38",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "staging",
+      "componentName": "unified-cloud-automation",
+      "createdBy": "Carmit Pinto",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6595",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "uca-retry-spfi",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "05-09-2023 18:38",
+      "modifiedTimestamp": "05-09-2023 18:38",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "int",
+      "componentName": "unified-cloud-automation",
+      "createdBy": "Carmit Pinto",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6595",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "uca-retry-spfi",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "05-09-2023 18:38",
+      "modifiedTimestamp": "05-09-2023 18:38",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "canary",
+      "componentName": "unified-cloud-automation",
+      "createdBy": "Carmit Pinto",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6595",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "uca-retry-spfi",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "05-09-2023 18:38",
+      "modifiedTimestamp": "05-09-2023 18:38",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "perf",
+      "componentName": "unified-cloud-automation",
+      "createdBy": "Carmit Pinto",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6595",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "uca-retry-spfi",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "05-09-2023 18:38",
+      "modifiedTimestamp": "05-09-2023 18:38",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "hotfix",
+      "componentName": "unified-cloud-automation",
+      "createdBy": "Carmit Pinto",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6595",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "uca-retry-spfi",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "05-09-2023 18:38",
+      "modifiedTimestamp": "05-09-2023 18:38",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "unified-cloud-automation",
+      "createdBy": "Carmit Pinto",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6595",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmcertificaterevokedvalidation",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "staging",
+      "componentName": "resources-server",
+      "createdBy": "Arik Shadmi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2231",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmcertificaterevokedvalidation",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "int",
+      "componentName": "resources-server",
+      "createdBy": "Arik Shadmi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2231",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmcertificaterevokedvalidation",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "canary",
+      "componentName": "resources-server",
+      "createdBy": "Arik Shadmi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2231",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmcertificaterevokedvalidation",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "perf",
+      "componentName": "resources-server",
+      "createdBy": "Arik Shadmi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2231",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmcertificaterevokedvalidation",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "hotfix",
+      "componentName": "resources-server",
+      "createdBy": "Arik Shadmi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2231",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmcertificaterevokedvalidation",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "resources-server",
+      "createdBy": "Arik Shadmi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2231",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmpatchrevisionid",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "staging",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-3119",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmpatchrevisionid",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "int",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-3119",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmpatchrevisionid",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "canary",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-3119",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmpatchrevisionid",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "perf",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-3119",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmpatchrevisionid",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "hotfix",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-3119",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmpatchrevisionid",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-3119",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmratelimit",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "staging",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-1968",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmratelimit",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "int",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-1968",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmratelimit",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "canary",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-1968",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmratelimit",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "perf",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-1968",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmratelimit",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "hotfix",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-1968",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "rmratelimit",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 12:00",
+      "modifiedTimestamp": "21-05-2023 12:00",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-1968",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "some-test-ft-scenario",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:01",
+      "modifiedTimestamp": "13-06-2023 06:01",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "staging",
+      "componentName": "unified-account",
+      "createdBy": "Nati Gavriel",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5728",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "some-test-ft-scenario",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:01",
+      "modifiedTimestamp": "13-06-2023 06:01",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "int",
+      "componentName": "unified-account",
+      "createdBy": "Nati Gavriel",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5728",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "some-test-ft-scenario",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:01",
+      "modifiedTimestamp": "13-06-2023 06:01",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "canary",
+      "componentName": "unified-account",
+      "createdBy": "Nati Gavriel",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5728",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "some-test-ft-scenario",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:01",
+      "modifiedTimestamp": "13-06-2023 06:01",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "perf",
+      "componentName": "unified-account",
+      "createdBy": "Nati Gavriel",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5728",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "some-test-ft-scenario",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:01",
+      "modifiedTimestamp": "13-06-2023 06:01",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "hotfix",
+      "componentName": "unified-account",
+      "createdBy": "Nati Gavriel",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5728",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "some-test-ft-scenario",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:01",
+      "modifiedTimestamp": "13-06-2023 06:01",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "unified-account",
+      "createdBy": "Nati Gavriel",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5728",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "test-feature-toggle-lock",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "11-06-2023 07:12",
+      "modifiedTimestamp": "11-06-2023 07:12",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "staging",
+      "componentName": "unified-account",
+      "createdBy": "Nati Gavriel",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4730",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "test-feature-toggle-lock",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "11-06-2023 07:12",
+      "modifiedTimestamp": "11-06-2023 07:12",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "int",
+      "componentName": "unified-account",
+      "createdBy": "Nati Gavriel",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4730",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "test-feature-toggle-lock",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "11-06-2023 07:12",
+      "modifiedTimestamp": "11-06-2023 07:12",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "canary",
+      "componentName": "unified-account",
+      "createdBy": "Nati Gavriel",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4730",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "test-feature-toggle-lock",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "11-06-2023 07:12",
+      "modifiedTimestamp": "11-06-2023 07:12",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "perf",
+      "componentName": "unified-account",
+      "createdBy": "Nati Gavriel",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4730",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "test-feature-toggle-lock",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "11-06-2023 07:12",
+      "modifiedTimestamp": "11-06-2023 07:12",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "hotfix",
+      "componentName": "unified-account",
+      "createdBy": "Nati Gavriel",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4730",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "test-feature-toggle-lock",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "11-06-2023 07:12",
+      "modifiedTimestamp": "11-06-2023 07:12",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "unified-account",
+      "createdBy": "Nati Gavriel",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4730",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "ua-restrict-initial-admins",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 15:18",
+      "modifiedTimestamp": "21-05-2023 15:18",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "staging",
+      "componentName": "unified-account",
+      "createdBy": "Aviv Guy",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2209",
+      "version": 2,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "ua-restrict-initial-admins",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 15:18",
+      "modifiedTimestamp": "21-05-2023 15:18",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "int",
+      "componentName": "unified-account",
+      "createdBy": "Aviv Guy",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2209",
+      "version": 2,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "ua-restrict-initial-admins",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 15:18",
+      "modifiedTimestamp": "21-05-2023 15:18",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "canary",
+      "componentName": "unified-account",
+      "createdBy": "Aviv Guy",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2209",
+      "version": 2,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "ua-restrict-initial-admins",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 15:18",
+      "modifiedTimestamp": "21-05-2023 15:18",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "perf",
+      "componentName": "unified-account",
+      "createdBy": "Aviv Guy",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2209",
+      "version": 2,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "ua-restrict-initial-admins",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 15:18",
+      "modifiedTimestamp": "21-05-2023 15:18",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "hotfix",
+      "componentName": "unified-account",
+      "createdBy": "Aviv Guy",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2209",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "ua-restrict-initial-admins",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 15:18",
+      "modifiedTimestamp": "21-05-2023 15:18",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "live",
+      "componentName": "unified-account",
+      "createdBy": "Aviv Guy",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2209",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "uca-simulate-cloud-automation-requests",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "19-03-2023 17:28",
+      "modifiedTimestamp": "19-03-2023 17:28",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "staging",
+      "componentName": "unified-cloud-automation",
+      "createdBy": "Carmit Pinto",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2417",
+      "version": 0,
+      "strategy": {
+        "allowedList": "/test/unified-cloud-automation-test/uca-test-rg,/test/unified-cloud-automation-test/uca-test-rg1",
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "uca-simulate-cloud-automation-requests",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "19-03-2023 17:28",
+      "modifiedTimestamp": "19-03-2023 17:28",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "int",
+      "componentName": "unified-cloud-automation",
+      "createdBy": "Carmit Pinto",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2417",
+      "version": 0,
+      "strategy": {
+        "allowedList": "/test/unified-cloud-automation-test/uca-test-rg",
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "uca-simulate-cloud-automation-requests",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "19-03-2023 17:28",
+      "modifiedTimestamp": "19-03-2023 17:28",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "canary",
+      "componentName": "unified-cloud-automation",
+      "createdBy": "Carmit Pinto",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2417",
+      "version": 0,
+      "strategy": {
+        "allowedList": "/test/unified-cloud-automation-test/uca-test-rg,/test/unified-cloud-automation-test/uca-test-rg1",
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "uca-simulate-cloud-automation-requests",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "19-03-2023 17:28",
+      "modifiedTimestamp": "19-03-2023 17:28",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "perf",
+      "componentName": "unified-cloud-automation",
+      "createdBy": "Carmit Pinto",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2417",
+      "version": 0,
+      "strategy": {
+        "allowedList": "/test/unified-cloud-automation-test/uca-test-rg,/test/unified-cloud-automation-test/uca-test-rg1",
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "uca-simulate-cloud-automation-requests",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "19-03-2023 17:28",
+      "modifiedTimestamp": "19-03-2023 17:28",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "hotfix",
+      "componentName": "unified-cloud-automation",
+      "createdBy": "Carmit Pinto",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2417",
+      "version": 0,
+      "strategy": {
+        "allowedList": "/test/unified-cloud-automation-test/uca-test-rg,/test/unified-cloud-automation-test/uca-test-rg",
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "uca-simulate-cloud-automation-requests",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "19-03-2023 17:28",
+      "modifiedTimestamp": "19-03-2023 17:28",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "unified-cloud-automation",
+      "createdBy": "Carmit Pinto",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-2417",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-disable-old-style-subresources-updates",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "26-07-2023 12:46",
+      "modifiedTimestamp": "26-07-2023 12:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "staging",
+      "componentName": "resources-server",
+      "createdBy": "Arik Shadmi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6115",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-disable-old-style-subresources-updates",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "26-07-2023 12:46",
+      "modifiedTimestamp": "26-07-2023 12:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "int",
+      "componentName": "resources-server",
+      "createdBy": "Arik Shadmi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6115",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-disable-old-style-subresources-updates",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "26-07-2023 12:46",
+      "modifiedTimestamp": "26-07-2023 12:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "canary",
+      "componentName": "resources-server",
+      "createdBy": "Arik Shadmi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6115",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-disable-old-style-subresources-updates",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "26-07-2023 12:46",
+      "modifiedTimestamp": "26-07-2023 12:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "perf",
+      "componentName": "resources-server",
+      "createdBy": "Arik Shadmi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6115",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-disable-old-style-subresources-updates",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "26-07-2023 12:46",
+      "modifiedTimestamp": "26-07-2023 12:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "hotfix",
+      "componentName": "resources-server",
+      "createdBy": "Arik Shadmi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6115",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-disable-old-style-subresources-updates",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "26-07-2023 12:46",
+      "modifiedTimestamp": "26-07-2023 12:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "resources-server",
+      "createdBy": "Arik Shadmi",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-6115",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-enable-adaptive-rate-limiter",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:46",
+      "modifiedTimestamp": "13-06-2023 06:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "staging",
+      "componentName": "resources-server",
+      "createdBy": "Guy Dunsky",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4305",
+      "version": 2,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-enable-adaptive-rate-limiter",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:46",
+      "modifiedTimestamp": "13-06-2023 06:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "int",
+      "componentName": "resources-server",
+      "createdBy": "Guy Dunsky",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4305",
+      "version": 10,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-enable-adaptive-rate-limiter",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:46",
+      "modifiedTimestamp": "13-06-2023 06:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "canary",
+      "componentName": "resources-server",
+      "createdBy": "Guy Dunsky",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4305",
+      "version": 4,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-enable-adaptive-rate-limiter",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:46",
+      "modifiedTimestamp": "13-06-2023 06:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "perf",
+      "componentName": "resources-server",
+      "createdBy": "Guy Dunsky",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4305",
+      "version": 5,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-enable-adaptive-rate-limiter",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:46",
+      "modifiedTimestamp": "13-06-2023 06:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "hotfix",
+      "componentName": "resources-server",
+      "createdBy": "Guy Dunsky",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4305",
+      "version": 2,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-enable-adaptive-rate-limiter",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:46",
+      "modifiedTimestamp": "13-06-2023 06:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "live",
+      "componentName": "resources-server",
+      "createdBy": "Guy Dunsky",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4305",
+      "version": 2,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-enable-adaptive-rate-limiter-blocking",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:46",
+      "modifiedTimestamp": "13-06-2023 06:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "staging",
+      "componentName": "resources-server",
+      "createdBy": "Guy Dunsky",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4305",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-enable-adaptive-rate-limiter-blocking",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:46",
+      "modifiedTimestamp": "13-06-2023 06:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "int",
+      "componentName": "resources-server",
+      "createdBy": "Guy Dunsky",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4305",
+      "version": 3,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-enable-adaptive-rate-limiter-blocking",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:46",
+      "modifiedTimestamp": "13-06-2023 06:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "canary",
+      "componentName": "resources-server",
+      "createdBy": "Guy Dunsky",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4305",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-enable-adaptive-rate-limiter-blocking",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:46",
+      "modifiedTimestamp": "13-06-2023 06:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "perf",
+      "componentName": "resources-server",
+      "createdBy": "Guy Dunsky",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4305",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-enable-adaptive-rate-limiter-blocking",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:46",
+      "modifiedTimestamp": "13-06-2023 06:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "hotfix",
+      "componentName": "resources-server",
+      "createdBy": "Guy Dunsky",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4305",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-enable-adaptive-rate-limiter-blocking",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "13-06-2023 06:46",
+      "modifiedTimestamp": "13-06-2023 06:46",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "resources-server",
+      "createdBy": "Guy Dunsky",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4305",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-force-status-subresource-schema-validation",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "15-06-2023 10:05",
+      "modifiedTimestamp": "15-06-2023 10:05",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "staging",
+      "componentName": "resources-server",
+      "createdBy": "Asaf Mor",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4841",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-force-status-subresource-schema-validation",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "15-06-2023 10:05",
+      "modifiedTimestamp": "15-06-2023 10:05",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "int",
+      "componentName": "resources-server",
+      "createdBy": "Asaf Mor",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4841",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-force-status-subresource-schema-validation",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "15-06-2023 10:05",
+      "modifiedTimestamp": "15-06-2023 10:05",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "canary",
+      "componentName": "resources-server",
+      "createdBy": "Asaf Mor",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4841",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-force-status-subresource-schema-validation",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "15-06-2023 10:05",
+      "modifiedTimestamp": "15-06-2023 10:05",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "perf",
+      "componentName": "resources-server",
+      "createdBy": "Asaf Mor",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4841",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-force-status-subresource-schema-validation",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "15-06-2023 10:05",
+      "modifiedTimestamp": "15-06-2023 10:05",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "hotfix",
+      "componentName": "resources-server",
+      "createdBy": "Asaf Mor",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4841",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-force-status-subresource-schema-validation",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "15-06-2023 10:05",
+      "modifiedTimestamp": "15-06-2023 10:05",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "resources-server",
+      "createdBy": "Asaf Mor",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4841",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-reset-subresources-on-update",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "15-06-2023 10:05",
+      "modifiedTimestamp": "15-06-2023 10:05",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "staging",
+      "componentName": "resources-server",
+      "createdBy": "Asaf Mor",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4841",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-reset-subresources-on-update",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "15-06-2023 10:05",
+      "modifiedTimestamp": "15-06-2023 10:05",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "int",
+      "componentName": "resources-server",
+      "createdBy": "Asaf Mor",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4841",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-reset-subresources-on-update",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "15-06-2023 10:05",
+      "modifiedTimestamp": "15-06-2023 10:05",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "canary",
+      "componentName": "resources-server",
+      "createdBy": "Asaf Mor",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4841",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-reset-subresources-on-update",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "15-06-2023 10:05",
+      "modifiedTimestamp": "15-06-2023 10:05",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "perf",
+      "componentName": "resources-server",
+      "createdBy": "Asaf Mor",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4841",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-reset-subresources-on-update",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "15-06-2023 10:05",
+      "modifiedTimestamp": "15-06-2023 10:05",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "hotfix",
+      "componentName": "resources-server",
+      "createdBy": "Asaf Mor",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4841",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-reset-subresources-on-update",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "15-06-2023 10:05",
+      "modifiedTimestamp": "15-06-2023 10:05",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "resources-server",
+      "createdBy": "Asaf Mor",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4841",
+      "version": 1,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urmlistrtd",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 15:18",
+      "modifiedTimestamp": "21-05-2023 15:18",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "staging",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4184",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urmlistrtd",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 15:18",
+      "modifiedTimestamp": "21-05-2023 15:18",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "int",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4184",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urmlistrtd",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 15:18",
+      "modifiedTimestamp": "21-05-2023 15:18",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "canary",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4184",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urmlistrtd",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 15:18",
+      "modifiedTimestamp": "21-05-2023 15:18",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "perf",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4184",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urmlistrtd",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 15:18",
+      "modifiedTimestamp": "21-05-2023 15:18",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "hotfix",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4184",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urmlistrtd",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "21-05-2023 15:18",
+      "modifiedTimestamp": "21-05-2023 15:18",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": false,
+      "landscape": "live",
+      "componentName": "resources-server",
+      "createdBy": "Yulia Kolesnikov",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-4184",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-opensearch-cache",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "18-04-2023 13:48",
+      "modifiedTimestamp": "18-04-2023 13:48",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "staging",
+      "componentName": "resources-server",
+      "createdBy": "Nissim Tal",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-1359",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-opensearch-cache",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "18-04-2023 13:48",
+      "modifiedTimestamp": "18-04-2023 13:48",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "int",
+      "componentName": "resources-server",
+      "createdBy": "Nissim Tal",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-1359",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-opensearch-cache",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "18-04-2023 13:48",
+      "modifiedTimestamp": "18-04-2023 13:48",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "canary",
+      "componentName": "resources-server",
+      "createdBy": "Nissim Tal",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-1359",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-opensearch-cache",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "18-04-2023 13:48",
+      "modifiedTimestamp": "18-04-2023 13:48",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "perf",
+      "componentName": "resources-server",
+      "createdBy": "Nissim Tal",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-1359",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-opensearch-cache",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "18-04-2023 13:48",
+      "modifiedTimestamp": "18-04-2023 13:48",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "hotfix",
+      "componentName": "resources-server",
+      "createdBy": "Nissim Tal",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-1359",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-opensearch-cache",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "18-04-2023 13:48",
+      "modifiedTimestamp": "18-04-2023 13:48",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "live",
+      "componentName": "resources-server",
+      "createdBy": "Nissim Tal",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-1359",
+      "version": 0,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-persist-lease-in-opensearch-only",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "26-06-2023 13:10",
+      "modifiedTimestamp": "26-06-2023 13:10",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "staging",
+      "componentName": "resources-server",
+      "createdBy": "Gadi Melamed",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5561",
+      "version": 4,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-persist-lease-in-opensearch-only",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "26-06-2023 13:10",
+      "modifiedTimestamp": "26-06-2023 13:10",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "int",
+      "componentName": "resources-server",
+      "createdBy": "Gadi Melamed",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5561",
+      "version": 5,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-persist-lease-in-opensearch-only",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "26-06-2023 13:10",
+      "modifiedTimestamp": "26-06-2023 13:10",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "canary",
+      "componentName": "resources-server",
+      "createdBy": "Gadi Melamed",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5561",
+      "version": 2,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-persist-lease-in-opensearch-only",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "26-06-2023 13:10",
+      "modifiedTimestamp": "26-06-2023 13:10",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "perf",
+      "componentName": "resources-server",
+      "createdBy": "Gadi Melamed",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5561",
+      "version": 2,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-persist-lease-in-opensearch-only",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "26-06-2023 13:10",
+      "modifiedTimestamp": "26-06-2023 13:10",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "hotfix",
+      "componentName": "resources-server",
+      "createdBy": "Gadi Melamed",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5561",
+      "version": 2,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    },
+    {
+      "name": "urm-persist-lease-in-opensearch-only",
+      "namespace": "feature-toggle",
+      "creationTimestamp": "26-06-2023 13:10",
+      "modifiedTimestamp": "26-06-2023 13:10",
+      "deleted": false,
+      "deletedTimestamp": "",
+      "enabled": true,
+      "landscape": "live",
+      "componentName": "resources-server",
+      "createdBy": "Gadi Melamed",
+      "locked": "false",
+      "lastLockTimestamp": "",
+      "BLI": "SAPBTPCFS-5561",
+      "version": 2,
+      "strategy": {
+        "name": "default"
+      },
+      "lockHistory": []
+    }
+  ]
+}
