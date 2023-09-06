@@ -12,7 +12,9 @@
       <script type="text/javascript"  src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
       <script type="text/javascript"  src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
       <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
-      <script type="text/javascript"  src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+       <script type="text/javascript"  src="https://cdn.datatables.net/plug-ins/1.13.6/sorting/datetime-moment.js"></script>
+
+       <script type="text/javascript"  src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" data-auto-replace-svg="nest" data-observe-insertions="true"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -34,16 +36,18 @@
                             at: "right center"
                          }
                      });
-                        table = $('#table').DataTable( {
+
+                      $.fn.dataTable.moment( 'DD-MM-yyyy HH:mm' );
+
+                      table = $('#table').DataTable( {
                                     select: true,
                                     "columnDefs": [
                                         { "width": "250px", "targets": 0 },
                                         { "width": "250px", "targets": 1 },
                                         { "width": "200px", "targets": 2 },
                                         { "width": "200px", "targets": 3 },
-                                      ],
+                                    ],
                                       pagingType: 'full_numbers'
-
                                 } );
 
                       lowHighLandscapesDiffTable = $('#lowHighLandscapesTable').DataTable( {
