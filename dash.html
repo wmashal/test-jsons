@@ -48,18 +48,32 @@
 
                       lowHighLandscapesDiffTable = $('#lowHighLandscapesTable').DataTable( {
                                   "columnDefs": [
-                                      { "width": "180px", "targets": 0 },
-                                      { "width": "180px", "targets": 1 },
-                                      { "width": "50px", "targets": 2 },
-                                      { "width": "50px", "targets": 3 },
-                                      { "width": "50px", "targets": 4 },
-                                      { "width": "50px", "targets": 5 },
+                                      { "width": "300px", "targets": 0 },
+                                      { "width": "280px", "targets": 1 },
+                                      { "width": "100px", "targets": 2 },
+                                      { "width": "100px", "targets": 3 },
+                                      { "width": "100px", "targets": 4 },
+                                      { "width": "100px", "targets": 5 },
                                     ],
                                     paging: false,
                                     "bInfo": false,
                                     ordering: false,
                                     searching: false
                               } );
+
+                      lockingTable = $('#lockTable').DataTable( {
+                          "columnDefs": [
+                              { "width": "290px", "targets": 0 },
+                              { "width": "180px", "targets": 1 },
+                              { "width": "150px", "targets": 2 },
+                              { "width": "200px", "targets": 3 },
+                              { "width": "180px", "targets": 4 },
+                          ],
+                          paging: false,
+                          "bInfo": false,
+                          ordering: false,
+                          searching: false
+                      } );
 
                    });
 
@@ -93,40 +107,44 @@
 
                     //console.info(groupByLockState)
 
-
-                   // var count = 0;
-                    var landscapeTogglesDiffrences = new Map();
-                    var liveHotfixDiffrentToggles = [];
-                    var IntCanaryDiffrentToggles = [];
-
                     $.each(groupByToggleName, function(key,value) {
 
                       let toggleRow = createToggleRow();
+
                       for (let item of value) {
                           var rowArr = [];
+                          let lockRowArr = [];
 
-                          var nameCell = toggleRow.children[0];
+                          let nameCell = toggleRow.children[0];
                           nameCell.textContent = key;
                           rowArr.push($(nameCell).html())
 
-                          var componentNameCell = toggleRow.children[1];
+                          let componentNameCell = toggleRow.children[1];
                           componentNameCell.textContent = item["componentName"];
                           rowArr.push($(componentNameCell).html())
 
 
-                          var createdByCell = toggleRow.children[2];
+                          let createdByCell = toggleRow.children[2];
                           createdByCell.textContent = item["createdBy"];
                           rowArr.push($(createdByCell).html())
 
-                          var creationTimestamp = toggleRow.children[3];
-                          formatedcreationTimestamp = moment(item["creationTimestamp"]).format("YYYY-MM-DD");
+                          let creationTimestamp = toggleRow.children[3];
+                          formatedcreationTimestamp = moment(item["creationTimestamp"],"DD-MM-yyyy HH:mm").format("DD-MM-yyyy HH:mm");
                           creationTimestamp.textContent = formatedcreationTimestamp;
                           rowArr.push($(creationTimestamp).html())
 
-                          var dateModifiedTimestamp = toggleRow.children[4];
-                          formateddateModifiedTimestamp = moment(item["modefiedTimestamp"]).format("YYYY-MM-DD");
+                          let dateModifiedTimestamp = toggleRow.children[4];
+                          formateddateModifiedTimestamp = moment(item["modifiedTimestamp"],"DD-MM-yyyy HH:mm").format("DD-MM-yyyy HH:mm");
                           dateModifiedTimestamp.textContent = formateddateModifiedTimestamp;
                           rowArr.push($(dateModifiedTimestamp).html())
+
+
+                          if(item["locked"] === "true") {
+                              let lockToggleRow = fillLockTable(item, lockRowArr);
+                              lockingTable.row
+                                  .add(lockToggleRow)
+                                  .draw(true);
+                          }
                       }
 
                       // Create cells for each landscape
@@ -151,7 +169,7 @@
                                   }
 
                                   const stratigiesObj = Object.entries(togglevalue["strategy"]).reduce((str, entry, i) => `${str}${i > 0 ? '&' : ''}${entry[1]}`, "")
-                                  let landscapeTooltip = "Additional Info: \n Name: " + togglevalue["name"] + " \n Landscape: " + togglevalue["landscape"] + " \n Version: " + togglevalue["version"] + " \n Created: " + moment(togglevalue["creationTimestamp"]).format("YYYY-MM-DD") + " \n Strategies : " + stratigiesObj;
+                                  let landscapeTooltip = "Additional Info: \n Name: " + togglevalue["name"] + " \n Landscape: " + togglevalue["landscape"] + " \n Version: " + togglevalue["version"] + " \n Created: " + moment(togglevalue["creationTimestamp"],"DD-MM-yyyy HH:mm").format("DD-MM-yyyy HH:mm") + " \n Date Modified : " + moment(togglevalue["modifiedTimestamp"],"DD-MM-yyyy HH:mm").format("DD-MM-yyyy HH:mm") + " \n Strategies : " + stratigiesObj;
                                   $($(landscapeCell).children()[0]).attr("title", landscapeTooltip)
 
                                   rowArr.push($(landscapeCell).html())
@@ -163,6 +181,7 @@
 
 
                       //console.log(rowArr)
+
                       table.row
                           .add(rowArr)
                           .draw(true);
@@ -170,6 +189,30 @@
                     });
 
 
+                    function fillLockTable(toggle,rowArr){
+                        let lockToggleRow = createLockedToggleRow()
+
+                        lockToggleRow.children[0].textContent = toggle["name"];
+                        rowArr.push($(lockToggleRow.children[0]).html())
+                        lockToggleRow.children[1].textContent = toggle["componentName"];
+                        rowArr.push($(lockToggleRow.children[1]).html())
+                        lockToggleRow.children[2].textContent = toggle["landscape"];
+                        rowArr.push($(lockToggleRow.children[2]).html())
+
+                        lockDate = moment(toggle["lastLockTimestamp"],"DD-MM-yyyy HH:mm").format("DD-MM-yyyy HH:mm")
+                        if (toggle["lastLockTimestamp"].length > 0) {
+                            lockingDuration = calculateTimeDifference(moment(toggle["lastLockTimestamp"]));
+                        }
+
+                        lockToggleRow.children[3].textContent = toggle["lastLockTimestamp"].length > 0 ? lockDate : "NA";
+                        rowArr.push($(lockToggleRow.children[3]).html())
+
+
+                        lockToggleRow.children[4].textContent = lockingDuration.length > 0 ? lockingDuration : "NA";
+                        rowArr.push($(lockToggleRow.children[4]).html())
+
+                        return rowArr;
+                    }
                   function getLowHighLandscapesDiff(data){
 
                     var diffTogglesArr = [];
@@ -205,7 +248,7 @@
 
                   function buildLowHighLandscapesDiffTable(lowHighLandscapeDiff){
 
-                      if(lowHighLandscapeDiff){
+                      //if(lowHighLandscapeDiff){
 
                           $(".lowHighLandscapesTableContainer").show();
                           const groupByToggleName = lowHighLandscapeDiff.reduce((group, item) => {
@@ -243,10 +286,28 @@
                                   .draw(false);
 
                           });
-                      }
+                     // }
 
                   }
 
+                      function createLockedToggleRow(){
+                          let lockRow = document.createElement("tr");
+
+                          let nameTd = document.createElement("td");
+                          let componentNameTd = document.createElement("td");
+                          let landscapeTd = document.createElement("td");
+                          let lastLockDateTd = document.createElement("td");
+                          let lockingTimeDateTd = document.createElement("td");
+
+
+                          lockRow.append(nameTd)
+                          lockRow.append(componentNameTd)
+                          lockRow.append(landscapeTd)
+                          lockRow.append(lastLockDateTd)
+                          lockRow.append(lockingTimeDateTd)
+
+                          return lockRow;
+                      }
                   function createDiffRow(){
                       let diffRow = document.createElement("tr");
                       let nameTd = document.createElement("td");
@@ -254,16 +315,20 @@
                       let componentNameTd = document.createElement("td");
                       componentNameTd.textContent = 'NA';
                       let liveTd = document.createElement("td");
-                      liveTd.textContent = 'NA';
+                      liveTd.textContent = 'Valid';
+                      liveTd.style.color = "#5D9C59"
                       liveTd.id="live"
                       let hotfixTd = document.createElement("td");
-                      hotfixTd.textContent = 'NA';
+                      hotfixTd.textContent = 'Valid';
+                      hotfixTd.style.color = "#5D9C59"
                       hotfixTd.id="hotfix"
                       let canaryTd = document.createElement("td");
-                      canaryTd.textContent = 'NA';
+                      canaryTd.textContent = 'Valid';
+                      canaryTd.style.color = "#5D9C59"
                       canaryTd.id='canary'
                       let intTd = document.createElement("td");
-                      intTd.textContent = 'NA';
+                      intTd.style.color = "#5D9C59"
+                      intTd.textContent = 'Valid';
                       intTd.id = 'int'
                       diffRow.append(nameTd)
                       diffRow.append(componentNameTd)
@@ -343,7 +408,7 @@
                           togglesStatusPerlandscapeCounterStackedBarChartData.push(dataSetObject)
 
                       });
-
+/**
                       lockedCount = groupByLockState[true] ? groupByLockState[true].length : 0
                       unlockedCount = groupByLockState[false] ? groupByLockState[false].length : 0
                       const doughnutdata = {
@@ -375,7 +440,7 @@
                               }
                             }
                         });
-
+**/
 
                         const stackedLabels = Object.keys(groupByLandscape);
 
@@ -450,6 +515,7 @@
         }
 
         .tableContainer{
+            padding-top: 100px;
           margin: 40px;
         }
 
@@ -460,31 +526,57 @@
             white-space: pre-line;
         }
 
+        .subTablesContainer{
+            display:flex;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+
+
       </style>
    </head>
    <body>
    <div class="mainContainer">
       <div class="chartsContainer">
         <!-- <canvas id="landscapesTogglesCounterBarChart"></canvas> -->
-          <div class="lowHighLandscapesTableContainer">
-              <div class="alert alert-danger" role="alert">
-                  This list of toggles showcases the ones that are deactivated in lower landscapes but activated in higher landscapes. </br>It also highlights the differences in toggle states between the hotfix-live and Int-Canary environments.
+          <div class="subTablesContainer">
+              <div class="lowHighLandscapesTableContainer">
+                  <div class="alert alert-danger" role="alert">
+                      This list of toggles showcases the ones that are deactivated in lower landscapes but activated in higher landscapes. </br>It also highlights the differences in toggle states between the hotfix-live and Int-Canary environments.
+                  </div>
+                  <table id="lowHighLandscapesTable" class="table table-striped table-bordered">
+                      <thead>
+                        <th>Name</th>
+                        <th>Component Name</th>
+                        <th>Live</th>
+                        <th>Hotfix</th>
+                        <th>Canary</th>
+                        <th>Integrate</th>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                  </table>
               </div>
-              <table id="lowHighLandscapesTable" class="table table-striped table-bordered">
-                  <thead>
-                    <th>Name</th>
-                    <th>Component Name</th>
-                    <th>Live</th>
-                    <th>Hotfix</th>
-                    <th>Canary</th>
-                    <th>Integrate</th>
-                  </thead>
-                  <tbody>
-                  </tbody>
-              </table>
-          </div>
 
-        <canvas id="lockedCounterBarChart"></canvas>
+              <div class="lockTableContainer">
+                  <div class="alert alert-danger" role="alert">
+                      Locked toggles per component and landscape
+                  </div>
+                  <table id="lockTable" class="table table-striped table-bordered">
+                      <thead>
+                      <th>Name</th>
+                      <th>Component Name</th>
+                      <th>Landscape</th>
+                      <th>Last Lock Date</th>
+                      <th>Locking Duration</th>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                  </table>
+              </div>
+        </div>
+        <!-- <canvas id="lockedCounterBarChart"></canvas> -->
+
         <canvas id="togglesStatusPerlandscapeCounterStackedBarChart"></canvas>
       </div>
       <div class="tableContainer">
@@ -506,6 +598,6 @@
             	</tbody>
             </table>
       </div>
-    <div>
+   </div>
    </body>
 </html>
