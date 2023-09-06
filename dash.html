@@ -471,7 +471,8 @@
                                   text: 'Toggles Status Per Landscape Counter'
                                 },
                               },
-                              //responsive: true,
+                              responsive: true,
+                              maintainAspectRatio: false,
                               scales: {
                                 x: {
                                   stacked: true,
@@ -508,15 +509,20 @@
 
         .chartsContainer{
           display:flex;
-          column-gap: 60px;
-          height:350px;
-          max-height:350px;
-          margin: 40px;
+          column-gap: 20px;
+          margin: 20px;
+          background-color: aliceblue;
+          border-radius: 10px;
+          padding: 40px;
+        }
+
+        .chart-container {
+            width: 600px;
+            height:400px
         }
 
         .tableContainer{
-            padding-top: 100px;
-          margin: 40px;
+          margin: 20px;
         }
 
         .GFG{
@@ -576,8 +582,9 @@
               </div>
         </div>
         <!-- <canvas id="lockedCounterBarChart"></canvas> -->
-
-        <canvas id="togglesStatusPerlandscapeCounterStackedBarChart"></canvas>
+          <div class="chart-container">
+                 <canvas id="togglesStatusPerlandscapeCounterStackedBarChart" ></canvas>
+          </div>
       </div>
       <div class="tableContainer">
             <table id="table" class="table table-striped table-bordered">
