@@ -169,7 +169,8 @@
                                   }
 
                                   const stratigiesObj = Object.entries(togglevalue["strategy"]).reduce((str, entry, i) => `${str}${i > 0 ? '&' : ''}${entry[1]}`, "")
-                                  let landscapeTooltip = "Additional Info: \n Name: " + togglevalue["name"] + " \n Landscape: " + togglevalue["landscape"] + " \n Version: " + togglevalue["version"] + " \n Created: " + moment(togglevalue["creationTimestamp"],"DD-MM-yyyy HH:mm").format("DD-MM-yyyy HH:mm") + " \n Date Modified : " + moment(togglevalue["modifiedTimestamp"],"DD-MM-yyyy HH:mm").format("DD-MM-yyyy HH:mm") + " \n Strategies : " + stratigiesObj;
+                                  let modifiedBy = togglevalue["modifiedBy"] !== undefined ?  togglevalue["modifiedBy"] : ""
+                                  let landscapeTooltip = "Additional Info: \n Name: " + togglevalue["name"] + " \n Landscape: " + togglevalue["landscape"] + " \n Version: " + togglevalue["version"] + " \n Created: " + moment(togglevalue["creationTimestamp"],"DD-MM-yyyy HH:mm").format("DD-MM-yyyy HH:mm") + " \n Date Modified : " + moment(togglevalue["modifiedTimestamp"],"DD-MM-yyyy HH:mm").format("DD-MM-yyyy HH:mm") + ( modifiedBy.length >0 ? " \n Modified By : "+modifiedBy : "" )  + " \n Strategies : " + stratigiesObj;
                                   $($(landscapeCell).children()[0]).attr("title", landscapeTooltip)
 
                                   rowArr.push($(landscapeCell).html())
