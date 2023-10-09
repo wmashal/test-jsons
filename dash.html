@@ -24,11 +24,10 @@
 
                   var xValues = new Set();;
                   var yValues = [];
-                  var table;
-                  var lowHighLandscapesDiffTable;
-                  $(".lowHighLandscapesTableContainer").hide();
-                  $( function() {
-                    $(document).tooltip({
+
+                  jQuery(".lowHighLandscapesTableContainer").hide();
+                  jQuery( function() {
+                    jQuery(document).tooltip({
                          autoClose: false,
                          tooltipClass: "GFG",
                          position: {
@@ -37,52 +36,15 @@
                          }
                      });
 
-                      $.fn.dataTable.moment( 'DD-MM-yyyy HH:mm' );
-
-                      table = $('#table').DataTable( {
-                                    select: true,
-                                    "columnDefs": [
-                                        { "width": "250px", "targets": 0 },
-                                        { "width": "250px", "targets": 1 },
-                                        { "width": "200px", "targets": 2 },
-                                        { "width": "200px", "targets": 3 },
-                                    ],
-                                      pagingType: 'full_numbers'
-                                } );
-
-                      lowHighLandscapesDiffTable = $('#lowHighLandscapesTable').DataTable( {
-                                  "columnDefs": [
-                                      { "width": "300px", "targets": 0 },
-                                      { "width": "280px", "targets": 1 },
-                                      { "width": "100px", "targets": 2 },
-                                      { "width": "100px", "targets": 3 },
-                                      { "width": "100px", "targets": 4 },
-                                      { "width": "100px", "targets": 5 },
-                                    ],
-                                    paging: false,
-                                    "bInfo": false,
-                                    ordering: false,
-                                    searching: false
-                              } );
-
-                      lockingTable = $('#lockTable').DataTable( {
-                          "columnDefs": [
-                              { "width": "290px", "targets": 0 },
-                              { "width": "180px", "targets": 1 },
-                              { "width": "150px", "targets": 2 },
-                              { "width": "200px", "targets": 3 },
-                              { "width": "180px", "targets": 4 },
-                          ],
-                          paging: false,
-                          "bInfo": false,
-                          ordering: false,
-                          searching: false
-                      } );
+                      jQuery.fn.dataTable.moment( 'DD-MM-yyyy HH:mm' );
 
                    });
 
-                  $.get("https://wmashal.github.io/test-jsons/ft4.json", function(data) {
+                  jQuery.get("https://pages.github.tools.sap/atom-cfs/feature-toggle-extension/featureToggleMetaData.json", function(data) {
 
+                     $(".mainContainer").remove(".datshTitle");
+                     $(".mainContainer").prepend('<div class="datshTitle alert alert-info"><h1>Feature Toggle Configurations Status '+data.lastUpdated+'</h1></div>')
+                     
                       let lowHighLandscapeDiff =  getLowHighLandscapesDiff(data);
                       buildLowHighLandscapesDiffTable(lowHighLandscapeDiff);
 
@@ -110,8 +72,34 @@
                     }, {});
 
                     //console.info(groupByLockState)
+                     
+                          
+                      let table = jQuery('#table').DataTable( {
+                                    select: true,
+                                    "columnDefs": [
+                                        { "width": "250px", "targets": 0 },
+                                        { "width": "250px", "targets": 1 },
+                                        { "width": "200px", "targets": 2 },
+                                        { "width": "200px", "targets": 3 },
+                                    ],
+                                      pagingType: 'full_numbers'
+                                } );
+                     
+                       let lockingTable = jQuery('#lockTable').DataTable( {
+                                   "columnDefs": [
+                                       { "width": "290px", "targets": 0 },
+                                       { "width": "180px", "targets": 1 },
+                                       { "width": "150px", "targets": 2 },
+                                       { "width": "200px", "targets": 3 },
+                                       { "width": "180px", "targets": 4 },
+                                   ],
+                                   paging: false,
+                                   "bInfo": false,
+                                   ordering: false,
+                                   searching: false
+                               } );
 
-                    $.each(groupByToggleName, function(key,value) {
+                    jQuery.each(groupByToggleName, function(key,value) {
 
                       let toggleRow = createToggleRow();
 
@@ -121,30 +109,33 @@
 
                           let nameCell = toggleRow.children[0];
                           nameCell.textContent = key;
-                          rowArr.push($(nameCell).html())
+                          rowArr.push(jQuery(nameCell).html())
 
                           let componentNameCell = toggleRow.children[1];
                           componentNameCell.textContent = item["componentName"];
-                          rowArr.push($(componentNameCell).html())
+                          rowArr.push(jQuery(componentNameCell).html())
 
 
                           let createdByCell = toggleRow.children[2];
                           createdByCell.textContent = item["createdBy"];
-                          rowArr.push($(createdByCell).html())
+                          rowArr.push(jQuery(createdByCell).html())
 
                           let creationTimestamp = toggleRow.children[3];
                           formatedcreationTimestamp = moment(item["creationTimestamp"],"DD-MM-yyyy HH:mm").format("DD-MM-yyyy HH:mm");
                           creationTimestamp.textContent = formatedcreationTimestamp;
-                          rowArr.push($(creationTimestamp).html())
+                          rowArr.push(jQuery(creationTimestamp).html())
 
                           let dateModifiedTimestamp = toggleRow.children[4];
                           formateddateModifiedTimestamp = moment(item["modifiedTimestamp"],"DD-MM-yyyy HH:mm").format("DD-MM-yyyy HH:mm");
                           dateModifiedTimestamp.textContent = formateddateModifiedTimestamp;
-                          rowArr.push($(dateModifiedTimestamp).html())
+                          rowArr.push(jQuery(dateModifiedTimestamp).html())
 
 
                           if(item["locked"] === "true") {
+
                               let lockToggleRow = fillLockTable(item, lockRowArr);
+                             
+                              
                               lockingTable.row
                                   .add(lockToggleRow)
                                   .draw(true);
@@ -153,14 +144,14 @@
 
                       // Create cells for each landscape
                       //var numberOfTogglesPerLandscape = 0;
-                      $.each(value, function(key,togglevalue) {
-                          $.each(toggleRow.children, function (key, landscapeCell) {
+                      jQuery.each(value, function(key,togglevalue) {
+                          jQuery.each(toggleRow.children, function (key, landscapeCell) {
 
                               if (togglevalue["landscape"] === landscapeCell.id) {
 
                                   xValues.add(togglevalue["landscape"]);
 
-                                  togglevalue["enabled"] === false ? $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #bd0000;"></i>') : $(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #3b9c07;"></i>');
+                                  togglevalue["enabled"] === false ? jQuery(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #bd0000;"></i>') : jQuery(landscapeCell).append('<i class="fa-solid fa-toggle-on" style="color: #3b9c07;"></i>');
 
                                   if (togglevalue["locked"] === "true") {
 
@@ -168,16 +159,16 @@
                                       if (togglevalue["lastLockTimestamp"].length > 0) {
                                           lockingDuration = calculateTimeDifference(moment(togglevalue["lastLockTimestamp"]));
                                       }
-                                      $(landscapeCell).append(' <i class="fa-solid fa-lock" style="color: #cc0000;" title="' + lockingDuration + '"></i>')
+                                      jQuery(landscapeCell).append(' <i class="fa-solid fa-lock" style="color: #cc0000;" title="' + lockingDuration + '"></i>')
 
                                   }
 
                                   const stratigiesObj = Object.entries(togglevalue["strategy"]).reduce((str, entry, i) => `${str}${i > 0 ? '&' : ''}${entry[1]}`, "")
                                   let modifiedBy = togglevalue["modifiedBy"] !== undefined ?  togglevalue["modifiedBy"] : ""
                                   let landscapeTooltip = "Additional Info: \n Name: " + togglevalue["name"] + " \n Landscape: " + togglevalue["landscape"] + " \n Version: " + togglevalue["version"] + " \n Created: " + moment(togglevalue["creationTimestamp"],"DD-MM-yyyy HH:mm").format("DD-MM-yyyy HH:mm") + " \n Date Modified : " + moment(togglevalue["modifiedTimestamp"],"DD-MM-yyyy HH:mm").format("DD-MM-yyyy HH:mm") + ( modifiedBy.length >0 ? " \n Modified By : "+modifiedBy : "" )  + " \n Strategies : " + stratigiesObj;
-                                  $($(landscapeCell).children()[0]).attr("title", landscapeTooltip)
+                                  jQuery(jQuery(landscapeCell).children()[0]).attr("title", landscapeTooltip)
 
-                                  rowArr.push($(landscapeCell).html())
+                                  rowArr.push(jQuery(landscapeCell).html())
                               }
 
                           });
@@ -186,6 +177,7 @@
 
 
                       //console.log(rowArr)
+                     
 
                       table.row
                           .add(rowArr)
@@ -198,11 +190,11 @@
                         let lockToggleRow = createLockedToggleRow()
 
                         lockToggleRow.children[0].textContent = toggle["name"];
-                        rowArr.push($(lockToggleRow.children[0]).html())
+                        rowArr.push(jQuery(lockToggleRow.children[0]).html())
                         lockToggleRow.children[1].textContent = toggle["componentName"];
-                        rowArr.push($(lockToggleRow.children[1]).html())
+                        rowArr.push(jQuery(lockToggleRow.children[1]).html())
                         lockToggleRow.children[2].textContent = toggle["landscape"];
-                        rowArr.push($(lockToggleRow.children[2]).html())
+                        rowArr.push(jQuery(lockToggleRow.children[2]).html())
 
                         lockDate = moment(toggle["lastLockTimestamp"],"DD-MM-yyyy HH:mm").format("DD-MM-yyyy HH:mm")
                         if (toggle["lastLockTimestamp"].length > 0) {
@@ -210,11 +202,11 @@
                         }
 
                         lockToggleRow.children[3].textContent = toggle["lastLockTimestamp"].length > 0 ? lockDate : "NA";
-                        rowArr.push($(lockToggleRow.children[3]).html())
+                        rowArr.push(jQuery(lockToggleRow.children[3]).html())
 
 
                         lockToggleRow.children[4].textContent = lockingDuration.length > 0 ? lockingDuration : "NA";
-                        rowArr.push($(lockToggleRow.children[4]).html())
+                        rowArr.push(jQuery(lockToggleRow.children[4]).html())
 
                         return rowArr;
                     }
@@ -255,7 +247,7 @@
 
                       //if(lowHighLandscapeDiff){
 
-                          $(".lowHighLandscapesTableContainer").show();
+                          jQuery(".lowHighLandscapesTableContainer").show();
                           const groupByToggleName = lowHighLandscapeDiff.reduce((group, item) => {
                               const { name } = item;
                               group[name] = group[name] ?? [];
@@ -264,7 +256,7 @@
                           }, {});
 
 
-                          $.each(groupByToggleName, function(key,value) {
+                          jQuery.each(groupByToggleName, function(key,value) {
 
                               let diffRow = createDiffRow();
 
@@ -276,16 +268,32 @@
                                   diffComponentNameCell.textContent = item["componentName"];
                               }
 
-                              $.each(value, function (key, togglevalue) {
-                                  $.each(diffRow.children, function (key, landscapeCell) {
+                              jQuery.each(value, function (key, togglevalue) {
+                                  jQuery.each(diffRow.children, function (key, landscapeCell) {
                                       if (togglevalue["landscape"] === landscapeCell.id && !togglevalue["enabled"]) {
-                                          $(landscapeCell).html('<i class="fa-solid fa-toggle-on" style="color: #bd0000;"></i>')
+                                          jQuery(landscapeCell).html('<i class="fa-solid fa-toggle-on" style="color: #bd0000;"></i>')
                                       } else if (togglevalue["landscape"] === landscapeCell.id && togglevalue["enabled"]) {
-                                          $(landscapeCell).html('<i class="fa-solid fa-toggle-on" style="color: #3b9c07;"></i>')
+                                          jQuery(landscapeCell).html('<i class="fa-solid fa-toggle-on" style="color: #3b9c07;"></i>')
                                       }
                                   });
                               });
 
+                              
+                             let lowHighLandscapesDiffTable = jQuery('#lowHighLandscapesTable').DataTable( {
+                                  "columnDefs": [
+                                      { "width": "300px", "targets": 0 },
+                                      { "width": "280px", "targets": 1 },
+                                      { "width": "100px", "targets": 2 },
+                                      { "width": "100px", "targets": 3 },
+                                      { "width": "100px", "targets": 4 },
+                                      { "width": "100px", "targets": 5 },
+                                    ],
+                                    paging: false,
+                                    "bInfo": false,
+                                    ordering: false,
+                                    searching: false
+                              } );
+                             
                               lowHighLandscapesDiffTable.row
                                   .add(diffRow)
                                   .draw(false);
@@ -390,7 +398,7 @@
 
                       var togglesStatusPerlandscapeCounterStackedBarChartData = [];
 
-                      $.each(groupByLandscape, function(key,value) {
+                      jQuery.each(groupByLandscape, function(key,value) {
 
                           //console.info(key)
                           // landscapesTogglesCounterBarChart y axis
@@ -511,6 +519,12 @@
           margin: 20px;
           width:100%
         }
+         
+         .datshTitle{
+           display: flex;
+           justify-content: center;
+           margin: 15px;
+         }
 
         .chartsContainer{
           display:flex;
