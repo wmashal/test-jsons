@@ -40,7 +40,7 @@
 
                    });
 
-                  jQuery.get("https://pages.github.tools.sap/atom-cfs/feature-toggle-extension/featureToggleMetaData.json", function(data) {
+                  jQuery.get("https://wmashal.github.io/test-jsons/test.json", function(data) {
 
                      $(".mainContainer").remove(".datshTitle");
                      $(".mainContainer").prepend('<div class="datshTitle alert alert-info"><h1>Feature Toggle Configurations Status '+data.lastUpdated+'</h1></div>')
