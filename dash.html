@@ -102,9 +102,9 @@
                     jQuery.each(groupByToggleName, function(key,value) {
 
                       let toggleRow = createToggleRow();
+                      let rowArr = [];
 
                       for (let item of value) {
-                          var rowArr = [];
                           let lockRowArr = [];
 
                           let nameCell = toggleRow.children[0];
