@@ -140,11 +140,7 @@
                                   .add(lockToggleRow)
                                   .draw(true);
                           }
-                      }
 
-                      // Create cells for each landscape
-                      //var numberOfTogglesPerLandscape = 0;
-                      jQuery.each(value, function(key,togglevalue) {
                           jQuery.each(toggleRow.children, function (key, landscapeCell) {
 
                               if (togglevalue["landscape"] === landscapeCell.id) {
@@ -172,8 +168,14 @@
                               }
 
                           });
+                      }
 
-                      });
+                      // Create cells for each landscape
+                      //var numberOfTogglesPerLandscape = 0;
+                      //jQuery.each(value, function(key,togglevalue) {
+
+
+                     // });
 
 
                       //console.log(rowArr)
